@@ -89,9 +89,10 @@ window.addEventListener('mousemove', function( event ) {
   var intersects = raycaster.intersectObject( GLOBAL.GROUND, true );
   console.log(intersects[0].object.id2);
   if ( intersects.length > 0 ) {
+    var texture = THREE.ImageUtils.loadTexture('./assets/images/selected.png');
+    // intersects[0].object.map = texture;
+    // intersects[0].object.needsUpdate = true;
     console.log(intersects[0]);
-    intersects[0].object.visible = false;
-    var index = Math.floor( intersects[0].faceIndex / 2 );
   }
 })
 
