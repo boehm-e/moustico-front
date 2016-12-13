@@ -41,7 +41,7 @@ function init_map() {
   document.body.appendChild(renderer.domElement);
 
   GLOBAL._cubes = fill_map(map);
-  load_clouds();
+  // load_clouds();
 
 
 
@@ -61,8 +61,6 @@ function load_clouds() {
 
   // loading texture
   var texture = THREE.ImageUtils.loadTexture('./assets/images/clouds.png');
-  texture.magFilter = THREE.LinearMipMapLinearFilter;
-  texture.minFilter = THREE.LinearMipMapLinearFilter;
 
   // preparing fog
   // var fog = new THREE.Fog(0x251d32, - 100, 5000);
