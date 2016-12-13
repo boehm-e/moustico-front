@@ -118,8 +118,6 @@ body {
   color: #EF3B3A;
 }
 
-
-
 #video {
   z-index: -99;
   position: fixed;
@@ -134,5 +132,9 @@ body {
 }
 
 .hidden {
-	display: none;
+	display: none !important;
+}
+
+.visible {
+	display: block !important;
 }

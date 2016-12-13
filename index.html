@@ -16,17 +16,18 @@
   <div class="form">
 	 <div class="thumbnail"><img src="./assets/images/MosquitoGames.png"/></div>
 	  <div class="register-form">
-	    <input type="text" placeholder="name"/>
-	    <input type="password" placeholder="password"/>
-	    <input type="text" placeholder="email address"/>
-	    <button>create</button>
-	    <p class="message">Already registered? <a href="#">Sign In</a></p>
+	    <input type="text" placeholder="Email address" id="email"/>
+	    <input type="text" placeholder="First name" id="firstname"/>
+	    <input type="text" placeholder="Last name" id="lastname"/>
+	    <input type="password" placeholder="Password" id="password"/>
+	    <button id="button_create">CREATE</button>
+	    <p class="message">Already registered? <a id="login" href="#">Sign In</a></p>
 	  </div>
 	  <div class="login-form">
 	    <input type="text" placeholder="Username" id="email"/>
 	    <input type="password" placeholder="Password" id="password"/>
 	    <button id="button_login">LOGIN</button>
-	    <p class="message">Not registered? <a href="#">Create an account</a></p>
+	    <p class="message">Not registered? <a id="create_account" href="#">Create an account</a></p>
 	  </div>
 	</div>
   <script type="text/javascript" src="./js/login.js"></script>
