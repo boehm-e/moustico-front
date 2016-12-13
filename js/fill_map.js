@@ -16,18 +16,17 @@ function fill_map(map) {
       switch (type) {
         case 0:
         cube = new THREE.Mesh(geometry, GrassMaterial);
+        cube.type = "grass"
         break;
         case 1:
         cube = new THREE.Mesh(geometry, WaterMaterial);
+        cube.type = "water"
         cube.add(GLOBAL.objects.tree.clone())
         break;
         case 42:
         cube = new THREE.Mesh(geometry, WaterMaterial);
+        cube.type = "water"
         cube.add(GLOBAL.objects.house.clone())
-        break;
-        case 8: // CLOUDS
-        // cube = GLOBAL.materials.cloud.clone();
-        // cube.scale.x = cube.scale.y = cube.scale.z =  0.1 * Math.random();
         break;
       }
       if (cube) {
