@@ -7,18 +7,6 @@ var Controls = {
   DOWN:  false
 };
 
-
-function onMouseMove( event ) {
-
-  // calculate mouse position in normalized device coordinates
-  // (-1 to +1) for both components
-
-  mouse.x = ( event.clientX / window.innerWidth ) * 2 - 1;
-  mouse.y = - ( event.clientY / window.innerHeight ) * 2 + 1;
-
-}
-
-
 var camMovSpd = 0.1;
 var camZoomSpd = 0.5;
 var raycaster = new THREE.Raycaster();
@@ -46,10 +34,6 @@ function render() {
 
   raycaster.setFromCamera( mouse, camera );
   if (GLOBAL._cubes) {
-
-
-
-
 
   }
 
@@ -97,8 +81,10 @@ window.addEventListener('mousemove', function( event ) {
       }
     })
 
-    intersects[0].object.needToRemoveGrass = true;
-    intersects[0].object.material = GLOBAL.materials.selected;
+    if (intersects[0].object.type == "grass") {
+      intersects[0].object.needToRemoveGrass = true;
+      intersects[0].object.material = GLOBAL.materials.selected;
+    }
   }
 })
 
