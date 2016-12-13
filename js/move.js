@@ -90,8 +90,8 @@ window.addEventListener('mousemove', function( event ) {
   console.log(intersects[0].object.id2);
   if ( intersects.length > 0 ) {
     var texture = THREE.ImageUtils.loadTexture('./assets/images/selected.png');
-    // intersects[0].object.map = texture;
-    // intersects[0].object.needsUpdate = true;
+     intersects[0].object.faceIndex = texture;
+     intersects[0].object.needsUpdate = true;
     console.log(intersects[0]);
   }
 })
