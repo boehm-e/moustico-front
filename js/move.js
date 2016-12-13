@@ -43,8 +43,6 @@ function render() {
 }
 render();
 window.addEventListener('keydown', function(e) {
-  // console.log(e.keyCode);
-
   switch(e.keyCode) {
     case 87: // W
     case 38: // Up Arrow
@@ -75,8 +73,6 @@ window.addEventListener('mousemove', function( event ) {
   if ( intersects.length > 0 ) {
     GLOBAL._cubes.map(v => {
       if (v.needToRemoveGrass == true) {
-        console.log("GRASS "+ Math.random());
-        console.log(v);
         v.material = GLOBAL.materials.grass;
       }
     })
