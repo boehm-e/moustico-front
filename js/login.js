@@ -45,10 +45,10 @@ function request_Register() {
 	};
 
 	var body = {
-	  'email': document.getElementById("email").value,
-	  'firstname': document.getElementById("firstname").value,
-	  'lastname': document.getElementById("lastname").value,
-	  'password': document.getElementById("password").value
+	  'email': document.getElementById("email_create").value,
+	  'firstname': document.getElementById("firstname_create").value,
+	  'lastname': document.getElementById("lastname_create").value,
+	  'password': document.getElementById("password_create").value
 	};
 
 	request.send(JSON.stringify(body));
