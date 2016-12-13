@@ -7,18 +7,6 @@ var Controls = {
   DOWN:  false
 };
 
-
-function onMouseMove( event ) {
-
-  // calculate mouse position in normalized device coordinates
-  // (-1 to +1) for both components
-
-  mouse.x = ( event.clientX / window.innerWidth ) * 2 - 1;
-  mouse.y = - ( event.clientY / window.innerHeight ) * 2 + 1;
-
-}
-
-
 var camMovSpd = 0.1;
 var camZoomSpd = 0.5;
 var raycaster = new THREE.Raycaster();
@@ -46,10 +34,6 @@ function render() {
 
   raycaster.setFromCamera( mouse, camera );
   if (GLOBAL._cubes) {
-
-
-
-
 
   }
 
@@ -89,12 +73,6 @@ window.addEventListener('mousemove', function( event ) {
   var intersects = raycaster.intersectObject( GLOBAL.GROUND, true );
   console.log(intersects[0].object.id2);
   if ( intersects.length > 0 ) {
-<<<<<<< HEAD
-    var texture = THREE.ImageUtils.loadTexture('./assets/images/selected.png');
-     intersects[0].object.faceIndex = texture;
-     intersects[0].object.needsUpdate = true;
-    console.log(intersects[0]);
-=======
     GLOBAL._cubes.map(v => {
       if (v.needToRemoveGrass == true) {
         console.log("GRASS "+ Math.random());
@@ -102,10 +80,10 @@ window.addEventListener('mousemove', function( event ) {
         v.material = GLOBAL.materials.grass;
       }
     })
-
-    intersects[0].object.needToRemoveGrass = true;
-    intersects[0].object.material = GLOBAL.materials.selected;
->>>>>>> df20b55bd93bc4d7385ac040487597292b55f287
+    if (intersects[0].object.type == "grass") {
+      intersects[0].object.needToRemoveGrass = true;
+      intersects[0].object.material = GLOBAL.materials.selected;
+    }
   }
 })
 
