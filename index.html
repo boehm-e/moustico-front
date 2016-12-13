@@ -13,5 +13,28 @@
   <script type="text/javascript" src="./js/fill_map.js"></script>
   <script type="text/javascript" src="./js/init_map.js"></script>
   <script type="text/javascript" src="./js/move.js"></script>
+  <div class="form">
+	 <div class="thumbnail"><img src="./assets/images/MosquitoGames.png"/></div>
+	  <div class="register-form">
+	    <input type="text" placeholder="name"/>
+	    <input type="password" placeholder="password"/>
+	    <input type="text" placeholder="email address"/>
+	    <button>create</button>
+	    <p class="message">Already registered? <a href="#">Sign In</a></p>
+	  </div>
+	  <div class="login-form">
+	    <input type="text" placeholder="Username"/>
+	    <input type="password" placeholder="Password"/>
+	    <button id="button_login">LOGIN</button>
+	    <p class="message">Not registered? <a href="#">Create an account</a></p>
+	  </div>
+	</div>
+	<script type="text/javascript">
+		 var p = document.getElementById("button_login");
+		 p.onclick = function() {
+			 document.getElementsByClassName("form")[0].className += ' hidden';
+			 document.body.style.background = 'none';
+		};
+	</script>
 </body>
 </html>
