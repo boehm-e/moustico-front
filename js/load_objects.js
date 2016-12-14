@@ -83,9 +83,4 @@ Promise.all([JSON_rose, JSON_tree, JSON_house]).then((valeurs) => {
   GLOBAL.objects.rose = valeurs[0];
   GLOBAL.objects.tree = valeurs[1];
   GLOBAL.objects.house = valeurs[2];
-
-  /******************************/
-  /* INIT MAP when global ready */
-  /******************************/
-  init_map()
 });

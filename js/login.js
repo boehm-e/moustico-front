@@ -9,11 +9,14 @@ function request_Login() {
 
 	request.onreadystatechange = function () {
 	  if (this.readyState === 4 && this.status == 200) {
-    	console.log('Status:', this.status);
-	    console.log('Headers:', this.getAllResponseHeaders());
-	    console.log('Body:', this.responseText);
 			document.getElementsByClassName("form")[0].className += ' hidden';
 			document.body.style.background = 'none';
+
+			/******************************/
+			/* INIT MAP when global ready */
+			/******************************/
+			var data = JSON.parse(this.response).data;
+			init_map(data.map)
 	  }
 	};
 
@@ -36,9 +39,6 @@ function request_Register() {
 
 	request.onreadystatechange = function () {
 	  if (this.readyState === 4 && this.status == 200) {
-    	console.log('Status:', this.status);
-	    console.log('Headers:', this.getAllResponseHeaders());
-	    console.log('Body:', this.responseText);
 			document.getElementsByClassName("form")[0].className += ' hidden';
 			document.body.style.background = 'none';
 	  }
@@ -63,7 +63,7 @@ function request_Register() {
 		 request_Login();
 	 	};
 	 q.onclick = function() {
-		request_Register(); 
+		request_Register();
 	 };
 	 create.onclick = function() {
 		 document.getElementsByClassName("login-form")[0].className = "login-form hidden";
