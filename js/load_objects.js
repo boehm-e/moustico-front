@@ -25,7 +25,15 @@ var JSON_tree = new Promise((resolve, reject) => {
 
 var loader = new THREE.ObjectLoader();
 var JSON_house = new Promise((resolve, reject) => {
-  loader.load('./assets/objects/house/house.json',function ( obj ) {
+  loader.load('./assets/objects/bloodhouse/bloodhouse.json',function ( obj ) {
+    obj.scale.set(0.2,0.2,0.2)
+    return resolve(obj);
+  });
+});
+
+var loader = new THREE.ObjectLoader();
+var JSON_caserne = new Promise((resolve, reject) => {
+  loader.load('./assets/objects/caserne/caserne.json',function ( obj ) {
     obj.scale.set(0.3,0.3,0.3)
     return resolve(obj);
   });
@@ -78,9 +86,10 @@ GLOBAL.GROUND = GROUND;
 GLOBAL.scene = scene;
 GLOBAL.camera = camera;
 
-Promise.all([JSON_rose, JSON_tree, JSON_house]).then((valeurs) => {
+Promise.all([JSON_rose, JSON_tree, JSON_house, JSON_caserne]).then((valeurs) => {
   GLOBAL.objects = {};
   GLOBAL.objects.rose = valeurs[0];
   GLOBAL.objects.tree = valeurs[1];
   GLOBAL.objects.house = valeurs[2];
+  GLOBAL.objects.caserne = valeurs[3];
 });

@@ -1,4 +1,5 @@
 function fill_map(map) {
+  GLOBAL.map = map;
   var _cubes = [];
   var geometry = new THREE.BoxGeometry(1, 0.1, 1);
   var material = new THREE.MeshBasicMaterial( { color: 0xffffff } );
@@ -10,7 +11,6 @@ function fill_map(map) {
   GLOBAL.GROUND.add(floor)
   for (var i = -map.length/2; i < map.length/2; i++) {
     for (var j = -(map[i + map.length / 2].length)/2; j < (map[i + map.length / 2]).length/2; j++) {
-      var z = map[i + map.length/2].length/2 + j;
       var type = map[i + map.length/2][map[i + map.length/2].length/2 + j];
       var cube
       switch (type) {
@@ -30,7 +30,7 @@ function fill_map(map) {
         break;
       }
       if (cube) {
-        cube.id2 = [i + map.length/2, j+(map[i + map.length / 2].length)/2]
+        cube.coordinate = [i + map.length/2, j+(map[i + map.length / 2].length)/2]
         cube.position.z = j * 1//.05
         cube.position.x = i * 1//.05
         _cubes.push(cube)
