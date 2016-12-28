@@ -39,6 +39,14 @@ var JSON_caserne = new Promise((resolve, reject) => {
   });
 });
 
+var loader = new THREE.ObjectLoader();
+var JSON_redbull = new Promise((resolve, reject) => {
+  loader.load('./assets/objects/redbull/redbull.json',function ( obj ) {
+    obj.scale.set(0.3,0.3,0.3)
+    return resolve(obj);
+  });
+});
+
 
 /******************************/
 /*      LOAD TEXTURES         */
@@ -86,10 +94,11 @@ GLOBAL.GROUND = GROUND;
 GLOBAL.scene = scene;
 GLOBAL.camera = camera;
 
-Promise.all([JSON_rose, JSON_tree, JSON_house, JSON_caserne]).then((valeurs) => {
+Promise.all([JSON_rose, JSON_tree, JSON_house, JSON_caserne, JSON_redbull]).then((valeurs) => {
   GLOBAL.objects = {};
   GLOBAL.objects.rose = valeurs[0];
   GLOBAL.objects.tree = valeurs[1];
   GLOBAL.objects.house = valeurs[2];
   GLOBAL.objects.caserne = valeurs[3];
+  GLOBAL.objects.redbull = valeurs[4];
 });
