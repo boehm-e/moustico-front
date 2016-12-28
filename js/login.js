@@ -54,6 +54,30 @@ function request_Register() {
 	request.send(JSON.stringify(body));
 }
 
+function init_modal() {
+	var scene = new THREE.Scene();
+	 var camera = new THREE.PerspectiveCamera( 75, 200/200, 0.1, 1000 );
+	 var renderer = new THREE.WebGLRenderer();
+	 var loader = new THREE.ObjectLoader();
+	 renderer.setSize(200, 200);
+	 $('.model3D').append(renderer.domElement);
+	 loader.load('./assets/objects/bloodhouse/bloodhouse.json',function (obj) {
+	   obj.scale.set(0.2,0.2,0.2)
+	   add_scene(obj);
+	  });
+	  function add_scene(obj){
+		scene.add(obj);
+		camera.position.z = 5;
+		var render = function () {
+		  requestAnimationFrame(render);
+		  //cube.rotation.x += 0.1;			  
+		  obj.rotation.y += 0.02;
+		  renderer.render(scene, camera);
+	   };
+	   	render();
+	  }
+	  $('.modal').modal()
+}
 (function() {
 	var p = document.getElementById("button_login");
 	var q = document.getElementById("button_create");
@@ -73,4 +97,5 @@ function request_Register() {
 		 document.getElementsByClassName("login-form")[0].className = "login-form visible";
 		 document.getElementsByClassName("register-form")[0].className = "register-form hidden";
 	 }
-})();
+	 init_modal()
+	 })();
