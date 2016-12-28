@@ -114,6 +114,7 @@ window.addEventListener('mousedown', function( event ) {
       console.log("REDBULL");
       intersects[0].object.add(GLOBAL.objects.redbull.clone())
       GLOBAL.map[intersects[0].object.coordinate[0]][intersects[0].object.coordinate[1]] = 42;
+
       ADD_OBJECT = false;
       break;
     }
