@@ -18,9 +18,9 @@ function init_map(map) {
   light.position.set(10, 20, 15);
   scene.add(light);
 
-  camera.position.set(20, 20, 20);
-  camera.rotation.set(0 * Math.PI / 180, 0 * Math.PI / 180, 0 * Math.PI / 180);
-  camera.lookAt(scene.position);
+  // camera.position.set(20, 20, 20);
+  // camera.rotation.set(0 * Math.PI / 180, 0 * Math.PI / 180, 90 * Math.PI / 180);
+  // camera.lookAt(scene.position);
 
   renderer.render(scene, camera);
 }
