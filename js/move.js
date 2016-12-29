@@ -65,6 +65,8 @@ window.addEventListener('keydown', function(e) {
   }
 });
 
+var previousIntersect = null;
+
 window.addEventListener('mousemove', function( event ) {
   var vector = new THREE.Vector3(( event.clientX / window.innerWidth ) * 2 - 1, - ( event.clientY / window.innerHeight ) * 2 + 1, 0.5 );
   vector.unproject( camera );
@@ -97,6 +99,7 @@ window.addEventListener('mousemove', function( event ) {
         intersects[0].object.add(tmp);
         intersects[0].object.needToRemoveObject = true;
         intersects[0].object.traverse( function( node ) {
+        previousIntersect = intersects[0];
           if( node.material ) {
             node.material.opacity = 0.5;
             node.material.transparent = true;
@@ -109,7 +112,15 @@ window.addEventListener('mousemove', function( event ) {
 
 window.addEventListener('mousedown', function( event ) {
   if (ADD_OBJECT) {
-
+    console.log(previousIntersect);
+    previousIntersect.object.traverse( function( node ) {
+      if( node.material ) {
+        node.material.opacity = 1;
+        node.material.transparent = true;
+      }
+    });
+    previousIntersect.object.needToRemoveObject = false;
+    // previousIntersect.object.add(GLOBAL.objects.caserne.clone())
   }
 });
 

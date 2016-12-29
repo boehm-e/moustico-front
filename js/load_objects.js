@@ -26,7 +26,7 @@ var JSON_tree = new Promise((resolve, reject) => {
 var loader = new THREE.ObjectLoader();
 var JSON_house = new Promise((resolve, reject) => {
   loader.load('./assets/objects/bloodhouse/bloodhouse.json',function ( obj ) {
-    // obj.scale.set(0.2,0.2,0.2)
+    // obj.scale.set(0.5,0.5,0.5)
     return resolve(obj);
   });
 });
@@ -34,7 +34,7 @@ var JSON_house = new Promise((resolve, reject) => {
 var loader = new THREE.ObjectLoader();
 var JSON_caserne = new Promise((resolve, reject) => {
   loader.load('./assets/objects/caserne/caserne.json',function ( obj ) {
-    // obj.scale.set(0.3,0.3,0.3)
+    // obj.scale.set(0.5,0.5,0.5)
     return resolve(obj);
   });
 });
