@@ -82,7 +82,7 @@ function init_modal(name) {
   loader.load(`./assets/objects/${name}/${name}.json`,function ( obj ) {
     _obj = obj;
     _obj.position.y = -1;
-    obj.scale.set(0.5,0.5,0.5)
+    // obj.scale.set(0.5,0.5,0.5)
     scene.add( _obj );
   });
 
@@ -119,6 +119,14 @@ function init_modal(name) {
     document.getElementsByClassName("login-form")[0].className = "login-form visible";
     document.getElementsByClassName("register-form")[0].className = "register-form hidden";
   }
+  init_modal("bloodhouse")
+  init_modal("caserne")
+  init_modal("bloodhouse")
+  init_modal("caserne")
+  init_modal("bloodhouse")
+  init_modal("caserne")
+  init_modal("bloodhouse")
+  init_modal("caserne")
   init_modal("bloodhouse")
   init_modal("caserne")
 })();

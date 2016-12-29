@@ -10,7 +10,7 @@ var HEIGHT = window.innerHeight;
 var loader = new THREE.ObjectLoader();
 var JSON_rose = new Promise((resolve, reject) => {
   loader.load('./assets/objects/rose/rose.json',function ( obj ) {
-    obj.scale.set(0.03,0.03,0.03)
+    // obj.scale.set(0.03,0.03,0.03)
     return resolve(obj);
   });
 });
@@ -26,7 +26,7 @@ var JSON_tree = new Promise((resolve, reject) => {
 var loader = new THREE.ObjectLoader();
 var JSON_house = new Promise((resolve, reject) => {
   loader.load('./assets/objects/bloodhouse/bloodhouse.json',function ( obj ) {
-    obj.scale.set(0.2,0.2,0.2)
+    // obj.scale.set(0.2,0.2,0.2)
     return resolve(obj);
   });
 });
@@ -34,7 +34,7 @@ var JSON_house = new Promise((resolve, reject) => {
 var loader = new THREE.ObjectLoader();
 var JSON_caserne = new Promise((resolve, reject) => {
   loader.load('./assets/objects/caserne/caserne.json',function ( obj ) {
-    obj.scale.set(0.3,0.3,0.3)
+    // obj.scale.set(0.3,0.3,0.3)
     return resolve(obj);
   });
 });
@@ -42,7 +42,7 @@ var JSON_caserne = new Promise((resolve, reject) => {
 var loader = new THREE.ObjectLoader();
 var JSON_redbull = new Promise((resolve, reject) => {
   loader.load('./assets/objects/redbull/redbull.json',function ( obj ) {
-    obj.scale.set(0.3,0.3,0.3)
+    // obj.scale.set(0.3,0.3,0.3)
     return resolve(obj);
   });
 });
