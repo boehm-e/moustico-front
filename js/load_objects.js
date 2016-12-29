@@ -10,7 +10,7 @@ var HEIGHT = window.innerHeight;
 var loader = new THREE.ObjectLoader();
 var JSON_rose = new Promise((resolve, reject) => {
   loader.load('./assets/objects/rose/rose.json',function ( obj ) {
-    // obj.scale.set(0.03,0.03,0.03)
+    obj.scale.set(0.03,0.03,0.03)
     return resolve(obj);
   });
 });

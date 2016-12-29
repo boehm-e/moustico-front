@@ -69,11 +69,23 @@ function init_modal(name) {
   var camera = new THREE.PerspectiveCamera( 75, 200/200, 0.1, 1000 );
   var renderer = new THREE.WebGLRenderer();
   renderer.setSize( 200, 200 );
-  $('.model3D').append(renderer.domElement);
+  var id = Math.random().toString().split('.')[1]
+  var main = $('.model3D').append(`
+    <div class="row">
+            <div class="col s12">
+              <div class="card">
+                <div class="card-image" id="${id}">
+                  <span class="card-title">${name}</span>
+                </div>
+                <div class="card-action">
+                  <a href="#" onclick="ADD_OBJECT='${name}';$('#modal1').modal('close');">Choose</a>
+                </div>
+              </div>
+            </div>
+          </div>
+    `)
+    $(`#${id}`).append(renderer.domElement);
   scene.background = new THREE.Color( 0xfafafa );
-  var geometry = new THREE.BoxGeometry( 1, 1, 1 );
-  var material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
-  var cube = new THREE.Mesh( geometry, material );
   light = new THREE.PointLight(0xffffff, 5, 39);
   light.position.set(10, 20, 15);
   scene.add(light);
@@ -82,11 +94,9 @@ function init_modal(name) {
   loader.load(`./assets/objects/${name}/${name}.json`,function ( obj ) {
     _obj = obj;
     _obj.position.y = -1;
-    // obj.scale.set(0.5,0.5,0.5)
+    obj.scale.set(1.5,1.5,1.5)
     scene.add( _obj );
   });
-
-
 
   camera.position.z = 5;
   var render = function () {
@@ -121,12 +131,14 @@ function init_modal(name) {
   }
   init_modal("bloodhouse")
   init_modal("caserne")
+  init_modal("rose")
+  init_modal("tree")
   init_modal("bloodhouse")
   init_modal("caserne")
+  init_modal("rose")
+  init_modal("tree")
   init_modal("bloodhouse")
   init_modal("caserne")
-  init_modal("bloodhouse")
-  init_modal("caserne")
-  init_modal("bloodhouse")
-  init_modal("caserne")
+  init_modal("rose")
+  init_modal("tree")
 })();
