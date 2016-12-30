@@ -298,7 +298,8 @@ camera.position.z = 2;
 		// display markers on canvas for debug
 		drawCorners(markers, canvasElement)
 
-		scene.visible = false
+		scene.visible = true
+		// scene.visible = false
 
 		// if no marker got detected
 		if (markers.length  ===  0) return
