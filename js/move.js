@@ -1,5 +1,6 @@
 var mouse = new THREE.Vector2();
 GLOBAL.previousCoordinate = [-1,-1];
+GLOBAL.availableNames = ["bloodhouse","caserne","rose","tree"];
 
 var ADD_OBJECT;
 
@@ -87,10 +88,8 @@ window.addEventListener('mousemove', function( event ) {
         v.material = GLOBAL.materials.grass;
       }
       if (v.needToRemoveObject == true) {
-        console.log("needToRemoveObject");
-        console.log(v.children);
         for (var i = 0; i < v.children.length; i++) {
-          console.log(v.remove(v.children[i]));
+          v.remove(v.children[i]);
         }
       }
 
@@ -118,7 +117,6 @@ window.addEventListener('mousemove', function( event ) {
 
 window.addEventListener('mousedown', function( event ) {
   if (ADD_OBJECT) {
-    console.log(previousIntersect);
     previousIntersect.object.traverse( function( node ) {
       if( node.material ) {
         node.material.opacity = 1;
@@ -126,10 +124,17 @@ window.addEventListener('mousedown', function( event ) {
       }
     });
     previousIntersect.object.needToRemoveObject = false;
-    // previousIntersect.object.add(GLOBAL.objects.caserne.clone())
+    for (var i = 0; i < previousIntersect.object.length; i++) {
+      previousIntersect.remove(previousIntersect.object[i])
+    }
+    var tmp = GLOBAL.objects[ADD_OBJECT].clone();
+    tmp.TYPE = ADD_OBJECT;
+    tmp.userData.test = "DEF"
+    previousIntersect.object.add(tmp)
+    previousIntersect.test = "DDD"
   }
 });
-
+var fff;
 window.addEventListener('mouseup', function( event ) {
   var abc;
   var vector = new THREE.Vector3(( event.clientX / window.innerWidth ) * 2 - 1, - ( event.clientY / window.innerHeight ) * 2 + 1, 0.5 );
@@ -137,8 +142,15 @@ window.addEventListener('mouseup', function( event ) {
   raycaster.set( camera.position, vector.sub( camera.position ).normalize() );
   var intersects = raycaster.intersectObject( GLOBAL.GROUND, true );
   if ( intersects.length > 0 ) {
-    // console.log(intersects[0]);
-
+    fff = intersects[0]
+    var tmp = fff.object;
+    while (tmp) {
+      tmp = tmp.parent
+      if (!ADD_OBJECT && tmp && tmp.name && GLOBAL.availableNames.indexOf(tmp.name) > -1) {
+        handleModal(tmp.name)
+        break;
+      }
+    }
     // SET ADD_OBJECT ONCLICK ON ITEM TO ADD CUSTOM ITEM TO CLICK LOCATION
     switch (ADD_OBJECT) {
       case "tree":
