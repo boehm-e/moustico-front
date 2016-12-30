@@ -67,6 +67,12 @@ window.addEventListener('keydown', function(e) {
 
 var previousIntersect = null;
 
+window.addEventListener('resize', function(){
+  renderer.setSize( window.innerWidth, window.innerHeight )
+  camera.aspect	= window.innerWidth / window.innerHeight
+  camera.updateProjectionMatrix()
+}, false)
+
 window.addEventListener('mousemove', function( event ) {
   var vector = new THREE.Vector3(( event.clientX / window.innerWidth ) * 2 - 1, - ( event.clientY / window.innerHeight ) * 2 + 1, 0.5 );
   vector.unproject( camera );
