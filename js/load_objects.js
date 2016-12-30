@@ -278,7 +278,7 @@ camera.position.z = 2;
 	//		Comments
 	//////////////////////////////////////////////////////////////////////////////////
 
-	var modelSize = 1.0; // millimeter
+	var modelSize = 35.0; // millimeter
 
 	onRenderFcts.push(function(){
 		// if no new image for videoElement do nothing
