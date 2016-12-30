@@ -26,7 +26,7 @@ function fill_map(map) {
         case 42:
         cube = new THREE.Mesh(geometry, WaterMaterial);
         cube.type = "water"
-        cube.add(GLOBAL.objects.house.clone())
+        cube.add(GLOBAL.objects.bloodhouse.clone())
         break;
       }
       if (cube) {

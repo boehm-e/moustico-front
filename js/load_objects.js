@@ -98,7 +98,7 @@ Promise.all([JSON_rose, JSON_tree, JSON_house, JSON_caserne, JSON_redbull]).then
   GLOBAL.objects = {};
   GLOBAL.objects.rose = valeurs[0];
   GLOBAL.objects.tree = valeurs[1];
-  GLOBAL.objects.house = valeurs[2];
+  GLOBAL.objects.bloodhouse = valeurs[2];
   GLOBAL.objects.caserne = valeurs[3];
   GLOBAL.objects.redbull = valeurs[4];
 });
