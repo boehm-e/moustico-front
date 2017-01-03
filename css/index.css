@@ -5,7 +5,7 @@ body {
   margin: 0;
   padding; 0;
   overflow: hidden;
-  font-family: "Roboto", sans-serif;
+    font-family: "Roboto", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background: url('../assets/images/bg.jpg') no-repeat center fixed;
@@ -156,6 +156,91 @@ body {
   color: black !important;
 }
 
-.button_plus, .button_moins {
-	margin-top: 25px;
+/*CODE DE LA BARRE DINFOS GENERALE choice 1*/
+.display-bar-info {
+    height: 80px;
+    width: 100%;
+    position: absolute;
+}
+
+.progress-pie-chart, .progress-lvl {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #E5E5E5;
+    position: relative;
+    display: inline-block;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-right: 10px;
+    float: right;
+}
+
+.progress-pie-chart.gt-50 {
+    background-color: #e53935;
+}
+
+.ppc-progress {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    left: calc(50% - 30px);
+    top: calc(50% - 30px);
+    width: 60px;
+    height: 60px;
+    clip: rect(0, 60px, 60px, 30px);
+}
+
+.ppc-progress .ppc-progress-fill {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    left: calc(50% - 30px);
+    top: calc(50% - 30px);
+    width: 60px;
+    height: 60px;
+    clip: rect(0, 30px, 60px, 0);
+    background: #e53935;
+    transform: rotate(60deg);
+}
+
+.gt-50 .ppc-progress {
+    clip: rect(0, 30px, 60px, 0);
+}
+
+.gt-50 .ppc-progress .ppc-progress-fill {
+    clip: rect(0, 60px, 60px, 30px);
+    background: #E5E5E5;
+}
+
+.ppc-percents, .ppc-lvl {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    left: calc(50% - 50px/2);
+    top: calc(50% - 50px/2);
+    width: 50px;
+    height: 50px;
+    background: #fff;
+    text-align: center;
+    display: table;
+}
+
+.ppc-percents span {
+    display: block;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #e53935;
+}
+
+.ppc-lvl span {
+    display: block;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: grey;
+}
+
+.pcc-percents-wrapper {
+    display: table-cell;
+    vertical-align: middle;
 }
