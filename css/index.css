@@ -147,11 +147,6 @@ body {
     float: left;
 }
 
-canvas {
-    position: absolute;
-    z-index: -1;
-}
-
 .model3D > canvas {
     margin-left: 50px;
     float: left;
