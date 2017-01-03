@@ -1,83 +1,104 @@
 <!DOCTYPE html>
-
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>isometric view</title>
-    <link rel="stylesheet" href="./css/index.css">
-    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r82/three.min.js"></script>
-    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/stats.js/r11/Stats.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
-    <script type="text/javascript" src="./js/fbxLoader.js"></script>
-    <script type="text/javascript" src="./js/load_objects.js"></script>
-    <script src="http://localhost:4242/socket.io/socket.io.js"></script>
-    <script type="text/javascript" src="./js/fill_map.js"></script>
-    <script type="text/javascript" src="./js/init_map.js"></script>
-    <script type="text/javascript" src="./js/move.js"></script>
-    <script type="text/javascript" src="./js/infos.js"></script>
-  </head>
+<head>
+  <meta charset="utf-8">
+  <title>isometric view</title>
+  <link rel="stylesheet" href="./css/index.css">
+  <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r82/three.min.js"></script>
+  <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/stats.js/r11/Stats.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
+  <script type="text/javascript" src="./js/fbxLoader.js"></script>
+  <script type="text/javascript" src="./js/load_objects.js"></script>
+  <script src="http://localhost:4242/socket.io/socket.io.js"></script>
+  <script type="text/javascript" src="./js/fill_map.js"></script>
+  <script type="text/javascript" src="./js/init_map.js"></script>
+  <script type="text/javascript" src="./js/move.js"></script>
+  <script type="text/javascript" src="./js/handleModal.js"></script>
+</head>
 
-  <body>
-  <div class="display-bar-info">
-      <div class="progress-lvl">
-          <div class="ppc-progress">
-              <div class="ppc-progress-lvl"></div>
-          </div>
-          <div class="ppc-lvl">
-              <div class="pcc-percents-wrapper">
-                  <span>1</span>
-              </div>
-          </div>
-      </div>
+<body>
+    <div class="ko-progress-lvl" data-progress="100">
+        <div class="ko-circle">
+            <div class="full ko-progress-circle__slice">
+                <div class="ko-progress-circle__fill"></div>
+            </div>
+            <div class="ko-progress-circle__slice">
+                <div class="ko-progress-circle__fill"></div>
+                <div class="ko-progress-circle__fill ko-progress-circle__bar"></div>
+            </div>
+        </div>
+        <div class="ko-progress-circle__overlay"><span>1</span></div>
+    </div>
 
-      <div class="progress-pie-chart" data-percent="25">
-          <div class="ppc-progress">
-              <div class="ppc-progress-fill"></div>
-          </div>
-          <div class="ppc-percents">
-              <div class="pcc-percents-wrapper">
-                  <span>O</span>
-              </div>
-          </div>
-      </div>
+    <div class="ko-progress-circle" data-progress="80">
+        <div class="ko-circle">
+            <div class="full ko-progress-circle__slice">
+                <div class="ko-progress-circle__fill"></div>
+            </div>
+            <div class="ko-progress-circle__slice">
+                <div class="ko-progress-circle__fill"></div>
+                <div class="ko-progress-circle__fill ko-progress-circle__bar"></div>
+            </div>
+        </div>
+        <div class="ko-progress-circle__overlay"><span>O</span></div>
+    </div>
 
-      <div class="progress-pie-chart" data-percent="">
-          <div class="ppc-progress">
-              <div class="ppc-progress-fill"></div>
-          </div>
-          <div class="ppc-percents">
-              <div class="pcc-percents-wrapper">
-                  <span>AB</span>
-              </div>
-          </div>
-      </div>
+    <div class="ko-progress-circle" data-progress="60">
+        <div class="ko-circle">
+            <div class="full ko-progress-circle__slice">
+                <div class="ko-progress-circle__fill"></div>
+            </div>
+            <div class="ko-progress-circle__slice">
+                <div class="ko-progress-circle__fill"></div>
+                <div class="ko-progress-circle__fill ko-progress-circle__bar"></div>
+            </div>
+        </div>
+        <div class="ko-progress-circle__overlay"><span>AB</span></div>
+    </div>
 
-      <div class="progress-pie-chart" data-percent="">
-          <div class="ppc-progress">
-              <div class="ppc-progress-fill"></div>
-          </div>
-          <div class="ppc-percents">
-              <div class="pcc-percents-wrapper">
-                  <span>B</span>
-              </div>
-          </div>
-      </div>
+    <div class="ko-progress-circle" data-progress="40">
+        <div class="ko-circle">
+            <div class="full ko-progress-circle__slice">
+                <div class="ko-progress-circle__fill"></div>
+            </div>
+            <div class="ko-progress-circle__slice">
+                <div class="ko-progress-circle__fill"></div>
+                <div class="ko-progress-circle__fill ko-progress-circle__bar"></div>
+            </div>
+        </div>
+        <div class="ko-progress-circle__overlay"><span>B</span></div>
+    </div>
 
-      <div class="progress-pie-chart" data-percent="">
-          <div class="ppc-progress">
-              <div class="ppc-progress-fill"></div>
-          </div>
-          <div class="ppc-percents">
-              <div class="pcc-percents-wrapper">
-                  <span>A</span>
-              </div>
-          </div>
-      </div>
+    <div class="ko-progress-circle" data-progress="20">
+        <div class="ko-circle">
+            <div class="full ko-progress-circle__slice">
+                <div class="ko-progress-circle__fill"></div>
+            </div>
+            <div class="ko-progress-circle__slice">
+                <div class="ko-progress-circle__fill"></div>
+                <div class="ko-progress-circle__fill ko-progress-circle__bar"></div>
+            </div>
+        </div>
+        <div class="ko-progress-circle__overlay"><span>A</span></div>
+    </div>
+
+  <div class="fixed-action-btn horizontal click-to-toggle">
+    <a class="btn-floating btn-large green" href="#modal1">
+      <i class="material-icons">add</i>
+    </a>
   </div>
-
+  <div id="modal1" class="modal bottom-sheet">
+    <div class="modal-content">
+      <div class="model3D">
+      </div>
+    </div>
+    <div class="modal-footer">
+    </div>
+  </div>
+  
   <div id="modal_caserne" class="modal modal_caserne">
     <div class="modal-content">
       <h4>Caserne niveau 2</h4>
@@ -100,47 +121,26 @@
     </div>
   </div>
 
-    <div class="fixed-action-btn horizontal click-to-toggle">
-      <a class="btn-floating btn-large green" href="#modal1">
-        <i class="material-icons">add</i>
-      </a>
+
+  <div class="form">
+    <div class="thumbnail"><img src="./assets/images/MosquitoGames.png"/></div>
+    <div class="register-form">
+      <input type="text" placeholder="Email address" id="email_create"/>
+      <input type="text" placeholder="First name" id="firstname_create"/>
+      <input type="text" placeholder="Last name" id="lastname_create"/>
+      <input type="password" placeholder="Password" id="password_create"/>
+      <button id="button_create">CREATE</button>
+      <p class="message">Already registered? <a id="login" href="#">Sign In</a></p>
     </div>
-
-    <div id="modal1" class="modal bottom-sheet">
-      <div class="modal-content">
-        <div class="model3D"></div>
-      </div>
-
-      <div class="modal-footer"></div>
+    <div class="login-form">
+      <input type="text" placeholder="Username" id="email"/>
+      <input type="password" placeholder="Password" id="password"/>
+      <button id="button_login">LOGIN</button>
+      <p class="message">Not registered? <a id="create_account" href="#">Create an account</a></p>
     </div>
-
-    <div class="form">
-      <div class="thumbnail"><img src="./assets/images/MosquitoGames.png"/></div>
-
-      <div class="register-form">
-        <input type="text" placeholder="Email address" id="email_create"/>
-        <input type="text" placeholder="First name" id="firstname_create"/>
-        <input type="text" placeholder="Last name" id="lastname_create"/>
-        <input type="password" placeholder="Password" id="password_create"/>
-        <button id="button_create">CREATE</button>
-        <p class="message">Already registered? <a id="login" href="#">Sign In</a></p>
-      </div>
-
-      <div class="login-form">
-        <input type="text" placeholder="Username" id="email"/>
-        <input type="password" placeholder="Password" id="password"/>
-        <button id="button_login">LOGIN</button>
-        <p class="message">Not registered? <a id="create_account" href="#">Create an account</a></p>
-      </div>
-    </div>
-<<<<<<< HEAD
   </div>
   <script type="text/javascript" src="./js/modal.js"></script>
   <script type="text/javascript" src="./js/login.js"></script>
+  <script type="text/javascript" src="./js/infos.js"></script>
 </body>
-=======
-
-    <script type="text/javascript" src="./js/login.js"></script>
-  </body>
->>>>>>> Sulli-work
 </html>
