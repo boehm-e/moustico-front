@@ -23,10 +23,10 @@ function request_Login() {
           Authorization: data.token
         }
       });
-      socket.on('news', function(data) {
+      socket.on('test', function(data) {
         console.log(data);
       })
-      init_map(data.map)
+      init_map(data.map);
     }
   };
 
