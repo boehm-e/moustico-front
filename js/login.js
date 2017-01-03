@@ -1,3 +1,4 @@
+var socket;
 function request_Login() {
 
   var request = new XMLHttpRequest();
@@ -17,7 +18,7 @@ function request_Login() {
       /******************************/
       var data = JSON.parse(this.response).data;
       console.log(data);
-      var socket = io("http://localhost:4242", {
+      socket = io("http://localhost:4242", {
         extraHeaders: {
           Authorization: data.token
         }
