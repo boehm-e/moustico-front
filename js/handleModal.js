@@ -1,8 +1,8 @@
 function handleModal(name) {
-	  if (name == 'caserne')
+	console.log(name)
+	  if (name == 'caserne') {
 		  $('#modal_caserne').modal('open');
-	  else if (name == 'bloodhouse')
-	  		$('#modal_bloodhouse').modal('open');
+	  }
 }
 
 function calc_nbr_moustique(evenement) {
