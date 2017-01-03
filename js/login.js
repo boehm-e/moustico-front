@@ -18,13 +18,9 @@ function request_Login() {
       /******************************/
       var data = JSON.parse(this.response).data;
       console.log(data);
-      socket = io("http://localhost:4242", {
-        extraHeaders: {
-          Authorization: data.token
-        }
-      });
-      socket.on('test', function(data) {
-        console.log(data);
+      socket = io("http://localhost:4242", { query: "token="+data.token });
+      socket.on('blood', function(data) {
+        console.log("blood : ", data);
       })
       init_map(data.map);
     }
