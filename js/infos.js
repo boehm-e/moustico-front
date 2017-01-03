@@ -1,8 +1,3 @@
-$(function(){
-    setTimeout(window.randomize, 200);
-    $('.ko-progress-circle').click(window.randomize);
-     $('.ko-progress-circle__slice span').html(percent+'%');
-});
 
 function setBloodA() {
     return ;
