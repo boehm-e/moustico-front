@@ -399,6 +399,7 @@ GLOBAL.aspect = GLOBAL.WIDTH / GLOBAL.HEIGHT;
 GLOBAL.D = D;
 GLOBAL.GROUND = GROUND;
 GLOBAL.GROUND.rotation.x = Math.PI / 2
+GLOBAL.GROUND.scale.x = GLOBAL.GROUND.scale.y = GLOBAL.GROUND.scale.z = 0.05
 GLOBAL.scene = scene;
 GLOBAL.camera = camera;
 
