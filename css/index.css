@@ -147,9 +147,10 @@ body {
   float: left;
 }
 
-canvas {
+.circle-container {
   position: absolute;
-  z-index: -1;
+  float: right;
+  right: 0;
 }
 
 .model3D > canvas {
