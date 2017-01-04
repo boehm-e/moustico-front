@@ -153,24 +153,29 @@ window.addEventListener('mouseup', function( event ) {
     }
     // SET ADD_OBJECT ONCLICK ON ITEM TO ADD CUSTOM ITEM TO CLICK LOCATION
     switch (ADD_OBJECT) {
-      case "tree":
-      abc = intersects[0].object.add(GLOBAL.objects.tree.clone())
-      abc.original = [intersects[0].object.coordinate[0],intersects[0].object.coordinate[1]];
-      GLOBAL.map[GLOBAL.previousCoordinate[0]][GLOBAL.previousCoordinate[1]] = 1;
-      break;
-      case "house":
-      intersects[0].object.add(GLOBAL.objects.house.clone())
-      GLOBAL.map[GLOBAL.previousCoordinate[0]][GLOBAL.previousCoordinate[1]] = 2;
+      case "bloodhouse":
+      intersects[0].object.add(GLOBAL.objects.bloodhouse.clone())
+      GLOBAL.map[GLOBAL.previousCoordinate[0]][GLOBAL.previousCoordinate[1]] = 42;
       break;
       case "caserne":
       intersects[0].object.add(GLOBAL.objects.caserne.clone())
-      GLOBAL.map[GLOBAL.previousCoordinate[0]][GLOBAL.previousCoordinate[1]] = 3;
+      GLOBAL.map[GLOBAL.previousCoordinate[0]][GLOBAL.previousCoordinate[1]] = 43;
       break;
-      case "redbull":
-      console.log("REDBULL");
-      intersects[0].object.add(GLOBAL.objects.redbull.clone())
-      GLOBAL.map[GLOBAL.previousCoordinate[0]][GLOBAL.previousCoordinate[1]] = 4;
+      case "tree":
+      abc = intersects[0].object.add(GLOBAL.objects.tree.clone())
+      GLOBAL.map[GLOBAL.previousCoordinate[0]][GLOBAL.previousCoordinate[1]] = 44;
       break;
+      case "wall":
+      abc = intersects[0].object.add(GLOBAL.objects.tree.clone())
+      GLOBAL.map[GLOBAL.previousCoordinate[0]][GLOBAL.previousCoordinate[1]] = 45;
+      break;
+      case "wall":
+      abc = intersects[0].object.add(GLOBAL.objects.tower.clone())
+      GLOBAL.map[GLOBAL.previousCoordinate[0]][GLOBAL.previousCoordinate[1]] = 46;
+      break;
+    }
+    if ($('#modal1').css('display') == 'none' && ADD_OBJECT) {
+      socket.emit('map', GLOBAL.map)
     }
     ADD_OBJECT = false;
   }
