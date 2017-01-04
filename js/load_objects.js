@@ -40,8 +40,24 @@ var JSON_caserne = new Promise((resolve, reject) => {
 });
 
 var loader = new THREE.ObjectLoader();
+var JSON_wall = new Promise((resolve, reject) => {
+  loader.load('./assets/objects/wall/wall.json',function ( obj ) {
+    // obj.scale.set(0.5,0.5,0.5)
+    return resolve(obj);
+  });
+});
+
+var loader = new THREE.ObjectLoader();
 var JSON_redbull = new Promise((resolve, reject) => {
   loader.load('./assets/objects/redbull/redbull.json',function ( obj ) {
+    // obj.scale.set(0.3,0.3,0.3)
+    return resolve(obj);
+  });
+});
+
+var loader = new THREE.ObjectLoader();
+var JSON_tower = new Promise((resolve, reject) => {
+  loader.load('./assets/objects/tower/tower.json',function ( obj ) {
     // obj.scale.set(0.3,0.3,0.3)
     return resolve(obj);
   });
@@ -100,11 +116,13 @@ GLOBAL.GROUND = GROUND;
 GLOBAL.scene = scene;
 GLOBAL.camera = camera;
 
-Promise.all([JSON_rose, JSON_tree, JSON_house, JSON_caserne, JSON_redbull]).then((valeurs) => {
+Promise.all([JSON_rose, JSON_tree, JSON_house, JSON_caserne, JSON_redbull, JSON_wall, JSON_tower]).then((valeurs) => {
   GLOBAL.objects = {};
   GLOBAL.objects.rose = valeurs[0];
   GLOBAL.objects.tree = valeurs[1];
   GLOBAL.objects.bloodhouse = valeurs[2];
   GLOBAL.objects.caserne = valeurs[3];
   GLOBAL.objects.redbull = valeurs[4];
+  GLOBAL.objects.wall = valeurs[5];
+  GLOBAL.objects.tower = valeurs[6];
 });
