@@ -17,12 +17,15 @@ function request_Login() {
       /* INIT MAP when global ready */
       /******************************/
       var data = JSON.parse(this.response).data;
-      console.log(data);
+      GLOBAL.data = data;
       socket = io("http://localhost:4242", { query: "token="+data.token });
       socket.on('blood', function(data) {
         console.log("blood : ", data);
       })
-      init_map(data.map);
+      socket.on('mapUpdate', function() {
+        Materialize.toast('Map mise a jour :)', 2000)
+      })
+      init_map(data.user.map);
     }
   };
 
