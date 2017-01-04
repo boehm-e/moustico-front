@@ -9,6 +9,7 @@ function fill_map(map) {
   floor.position.x = -10
   floor.position.y = -10
   // GLOBAL.GROUND.add(floor)
+  GLOBAL.GROUND.rotation.y = Math.PI / 2;
   for (var i = -map.length/2; i < map.length/2; i++) {
     for (var j = -(map[i + map.length / 2].length)/2; j < (map[i + map.length / 2]).length/2; j++) {
       var type = map[i + map.length/2][map[i + map.length/2].length/2 + j];
@@ -46,6 +47,11 @@ function fill_map(map) {
           cube = new THREE.Mesh(geometry, GrassMaterial);
           cube.type = "wall"
           cube.add(GLOBAL.objects.wall.clone())
+          break;
+        case 46: // banque de sang
+          cube = new THREE.Mesh(geometry, GrassMaterial);
+          cube.type = "tower"
+          cube.add(GLOBAL.objects.tower.clone())
           break;
       }
 

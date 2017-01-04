@@ -169,6 +169,10 @@ window.addEventListener('mouseup', function( event ) {
       abc = intersects[0].object.add(GLOBAL.objects.tree.clone())
       GLOBAL.map[GLOBAL.previousCoordinate[0]][GLOBAL.previousCoordinate[1]] = 45;
       break;
+      case "wall":
+      abc = intersects[0].object.add(GLOBAL.objects.tower.clone())
+      GLOBAL.map[GLOBAL.previousCoordinate[0]][GLOBAL.previousCoordinate[1]] = 46;
+      break;
     }
     if ($('#modal1').css('display') == 'none' && ADD_OBJECT) {
       socket.emit('map', GLOBAL.map)
