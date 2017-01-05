@@ -31,10 +31,10 @@ function handleModal(name) {
 		  $('#modal_bloodhouse').modal('open');
 	  }
 }
-
+var slideContainer;
 (function() {
 
-    var slideContainer = $('.slide-container');
+    slideContainer = $('.slide-container');
 
     slideContainer.slick();
 
