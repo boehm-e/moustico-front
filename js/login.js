@@ -35,6 +35,10 @@ function request_Login() {
       // SET MAP DISPLAY
       $('.hideInGame').css('display', 'none')
       document.getElementsByClassName('circle-container')[0].style.display = 'block'
+      var ingame = document.getElementsByClassName('showInGame');
+      for (var i=0; i<ingame.length; i++) {
+        ingame[i].style.visibility = 'visible'
+      }
     }
   };
 
