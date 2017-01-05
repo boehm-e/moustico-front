@@ -1,3 +1,63 @@
+@font-face {
+    font-family: "GROBOLD";
+    src: url('../assets/fonts/GROBOLD.ttf');
+}
+
+
+.talktext {
+  padding: 5% 5%;
+}
+
+.talk-bubble {
+	display: inline-block;
+	position: relative;
+	width: 100%;
+	height: auto;
+	background-color: white;
+}
+.border{
+  border: 8px solid #666;
+}
+.round{
+  border-radius: 30px;
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+
+}
+.paragraph {
+	padding-top: 100px;
+}
+.tri-right.border.btm-left-in:before {
+	content: ' ';
+	position: absolute;
+	width: 0;
+	height: 0;
+	left: 30px;
+	right: auto;
+	top: auto;
+	bottom: -40px;
+	border: 20px solid;
+	border-color: #666 transparent transparent #666;
+}
+.tri-right.btm-left-in:after{
+	content: ' ';
+	position: absolute;
+	width: 0;
+	height: 0;
+	left: 38px;
+	right: auto;
+	top: auto;
+	bottom: -20px;
+	border: 12px solid;
+	border-color: lightyellow transparent transparent lightyellow;
+}
+.img_moustique {
+	height: 350px;
+	width: 350px;
+	position: absolute;
+	left: 10%;
+	bottom:150px;
+}
 #toast-container {
   top: auto !important;
   right: auto !important;

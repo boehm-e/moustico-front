@@ -111,6 +111,11 @@ function init_modal(name) {
 
 
 (function() {
+	var titre = document.getElementById("titre");
+	var all_titre = document.getElementById("all_titre");
+	titre.keyboard("html", 50, 100, "Hey jeune mousaillon,", function() {
+		all_titre.keyboard("html", 20, 100, "Enfin tu te reveille petit paresseux.... !! Sa fait un moment que tu n'as pas BzzzBzzzzzz, le monde a beaucoup changé depuis. De nous alien on apparu, les 'HUMAINS' se sont de géant créature avec des raquette electrique et de la citronelle. Mais nous avons réussie à sauver une dizaine de moustico guerrier pour pouvoir reconstruire notre village.", function() {});
+	})
   var p = document.getElementById("button_login");
   var q = document.getElementById("button_create");
   var create = document.getElementById("create_account");

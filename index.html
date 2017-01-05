@@ -15,6 +15,7 @@
   <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/stats.js/r11/Stats.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
   <script type="text/javascript" src="./js/fbxLoader.js"></script>
+  <script type="text/javascript" src="./js/typeWrite.js"></script>
   <script type="text/javascript" src="./js/load_objects.js"></script>
   <script src="http://localhost:4242/socket.io/socket.io.js"></script>
   <script type="text/javascript" src="./js/fill_map.js"></script>
@@ -24,7 +25,21 @@
 </head>
 
 <body>
-
+	<h1 style="font-family: 'GROBOLD'; color:#EEEEEE; text-align: center">Mostico Game's</h1>
+	<div class="paragraph">
+		<div class="row" style="">
+			<img class="img_moustique" src="assets/images/moustique1.png">
+			<div class="speaker col s4 offset-s4">
+				<div class="talk-bubble tri-right border round btm-left-in">
+				  <div class="talktext">
+				    <h5 id="titre"></h5>
+					<p id="all_titre"></p>
+				  </div>
+				</div>
+			</div>
+		</div>
+		
+	</div>
 <!--START MARKDOWN CIRCLE PROGRESS-->
   <div class="circle-container">
     <div class="ko-progress-lvl" data-progress="100">
