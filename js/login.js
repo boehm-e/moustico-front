@@ -151,6 +151,7 @@ function init_modal(name) {
     document.getElementsByClassName("register-form")[0].className = "register-form hidden";
   }
   init_modal("bloodhouse")
+  init_modal("redbull")
   init_modal("caserne")
   init_modal("rose")
   init_modal("tree")
