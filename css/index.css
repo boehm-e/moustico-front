@@ -3,6 +3,13 @@
     src: url('../assets/fonts/GROBOLD.ttf');
 }
 
+.hideInGame {
+  display: block;
+}
+
+.showInGame {
+  display: none;
+}
 
 .talktext {
   padding: 5% 5%;
@@ -1367,5 +1374,3 @@ body {
   transform: rotate(360deg);
 }
 /*END CODE OF PROGRESS CIRCLE*/
-
-

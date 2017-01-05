@@ -31,6 +31,7 @@ function request_Login() {
         Materialize.toast(`Vous avez maintenant ${data.number} moustiques`, 2000)
       })
       init_map(data.user.map);
+      $('.hideInGame').css('display', 'none')
     }
   };
 
@@ -93,80 +94,80 @@ function init_modal(name) {
   var id = Math.random().toString().split('.')[1]
   var main = $('.model3D').append(`
     <div class="row">
-            <div class="col s12">
-              <div class="card">
-                <div class="card-image" id="${id}">
-                  <span class="card-title">${name}</span>
-                </div>
-                <div class="card-action">
-                  <a href="#" onclick="ADD_OBJECT='${name}';$('#modal1').modal('close');">Choose</a>
-                </div>
-              </div>
-            </div>
-          </div>
+    <div class="col s12">
+    <div class="card">
+    <div class="card-image" id="${id}">
+    <span class="card-title">${name}</span>
+    </div>
+    <div class="card-action">
+    <a href="#" onclick="ADD_OBJECT='${name}';$('#modal1').modal('close');">Choose</a>
+    </div>
+    </div>
+    </div>
+    </div>
     `)
     $(`#${id}`).append(renderer.domElement);
-  scene.background = new THREE.Color( 0xfafafa );
-  light = new THREE.PointLight(0xffffff, 5, 39);
-  light.position.set(10, 20, 15);
-  scene.add(light);
+    scene.background = new THREE.Color( 0xfafafa );
+    light = new THREE.PointLight(0xffffff, 5, 39);
+    light.position.set(10, 20, 15);
+    scene.add(light);
 
-  var loader = new THREE.ObjectLoader();
-  loader.load(`./assets/objects/${name}/${name}.json`,function ( obj ) {
-    _obj = obj;
-    _obj.position.y = -1;
-    obj.scale.set(1.5,1.5,1.5)
-    scene.add( _obj );
-  });
+    var loader = new THREE.ObjectLoader();
+    loader.load(`./assets/objects/${name}/${name}.json`,function ( obj ) {
+      _obj = obj;
+      _obj.position.y = -1;
+      obj.scale.set(1.5,1.5,1.5)
+      scene.add( _obj );
+    });
 
-  camera.position.z = 5;
-  var render = function () {
-    requestAnimationFrame( render );
-    if (_obj)
+    camera.position.z = 5;
+    var render = function () {
+      requestAnimationFrame( render );
+      if (_obj)
       _obj.rotation.y += 0.01;
-    renderer.render(scene, camera);
-  };
-  render();
-  $('.modal').modal()
-}
+      renderer.render(scene, camera);
+    };
+    render();
+    $('.modal').modal()
+  }
 
 
-(function() {
-	/*********************							POUR ERWAN 						 **************************/
-	if (true) {
-	var titre = document.getElementById("titre");
-	var all_titre = document.getElementById("all_titre");
-	titre.keyboard("html", 50, 100, "Hey jeune mousaillon,", function() {
-		all_titre.keyboard("html", 20, 100, "Enfin tu te reveille petit paresseux.... !! Sa fait un moment que tu n'as pas BzzzBzzzzzz, le monde a beaucoup changé depuis. De nous alien on apparu, les 'HUMAINS' se sont de géant créature avec des raquette electrique et de la citronelle. Mais nous avons réussie à sauver une dizaine de moustico guerrier pour pouvoir reconstruire notre village.", function() {});
-	})
-		$('.all_body').css('display', 'none');
-	}
-	else {
-		$('.paragraph').css('display', 'block');
-	}
-  var p = document.getElementById("button_login");
-  var q = document.getElementById("button_create");
-  var create = document.getElementById("create_account");
-  var login = document.getElementById("login");
-  p.onclick = function() {
-    request_Login();
-  };
-  q.onclick = function() {
-    request_Register();
-  };
-  create.onclick = function() {
-    document.getElementsByClassName("login-form")[0].className = "login-form hidden";
-    document.getElementsByClassName("register-form")[0].className = "register-form visible";
-  }
-  login.onclick = function() {
-    document.getElementsByClassName("login-form")[0].className = "login-form visible";
-    document.getElementsByClassName("register-form")[0].className = "register-form hidden";
-  }
-  init_modal("bloodhouse")
-  init_modal("redbull")
-  init_modal("caserne")
-  init_modal("rose")
-  init_modal("tree")
-  init_modal("wall")
-  init_modal("tower")
-})();
+  (function() {
+    /*********************							POUR ERWAN 						 **************************/
+    if (false) {
+      var titre = document.getElementById("titre");
+      var all_titre = document.getElementById("all_titre");
+      titre.keyboard("html", 50, 100, "Hey jeune mousaillon,", function() {
+        all_titre.keyboard("html", 20, 100, "Enfin tu te reveille petit paresseux.... !! Sa fait un moment que tu n'as pas BzzzBzzzzzz, le monde a beaucoup changé depuis. De nous alien on apparu, les 'HUMAINS' se sont de géant créature avec des raquette electrique et de la citronelle. Mais nous avons réussie à sauver une dizaine de moustico guerrier pour pouvoir reconstruire notre village.", function() {});
+      })
+      $('.all_body').css('display', 'none');
+    }
+    else {
+      $('.paragraph').css('display', 'none');
+    }
+    var p = document.getElementById("button_login");
+    var q = document.getElementById("button_create");
+    var create = document.getElementById("create_account");
+    var login = document.getElementById("login");
+    p.onclick = function() {
+      request_Login();
+    };
+    q.onclick = function() {
+      request_Register();
+    };
+    create.onclick = function() {
+      document.getElementsByClassName("login-form")[0].className = "login-form hidden";
+      document.getElementsByClassName("register-form")[0].className = "register-form visible";
+    }
+    login.onclick = function() {
+      document.getElementsByClassName("login-form")[0].className = "login-form visible";
+      document.getElementsByClassName("register-form")[0].className = "register-form hidden";
+    }
+    init_modal("bloodhouse")
+    init_modal("redbull")
+    init_modal("caserne")
+    init_modal("rose")
+    init_modal("tree")
+    init_modal("wall")
+    init_modal("tower")
+  })();
