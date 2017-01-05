@@ -59,7 +59,7 @@
 	bottom:150px;
 }
 #toast-container {
-  top: auto !important;
+  /*top: auto !important;*/
   right: auto !important;
   left:7% !important;
   top: 10% !important;
@@ -88,10 +88,7 @@ body {
   max-width: 300px;
   margin: 0 auto 100px;
   padding: 30px;
-  border-top-left-radius: 3px;
-  border-top-right-radius: 3px;
-  border-bottom-left-radius: 3px;
-  border-bottom-right-radius: 3px;
+  border-radius: 3px;
   text-align: center;
 }
 .form .thumbnail {
@@ -129,10 +126,7 @@ body {
   width: 100%;
   border: 0;
   padding: 15px;
-  border-top-left-radius: 3px;
-  border-top-right-radius: 3px;
-  border-bottom-left-radius: 3px;
-  border-bottom-right-radius: 3px;
+  border-radius: 3px;
   color: #FFFFFF;
   font-size: 14px;
   -webkit-transition: all 0.3 ease;
@@ -231,26 +225,49 @@ body {
 }
 
 .button_plus, .button_moins {
-  margin-top: 25px;
 }
 
 /*START CODE MODAL CLASH OF CLAN*/
+.modal-content {
+    padding: 20px;
+    height: 90%;
+}
+
+.modal-footer {
+    background: none !important;
+}
+
+.modal-footer .modal-close {
+    padding-right: 10px !important;
+    padding-left: 10px !important;
+    color: #fff !important;
+    margin: 5px !important;
+}
+
+.modal_caserne.modal {
+    background-color: transparent !important;
+    box-shadow: none !important;
+}
+
 .slide-container {
     margin: auto;
     width: 600px;
+    max-height: 720px !important;
     text-align: center;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
 }
 .slick-slider {
   position: absolute !important;
 }
 
+.slick-prev:before, .slick-next:before {
+    font-size: 30px !important;
+}
 
 .wrapper {
-    padding-top: 40px;
-    padding-bottom: 40px;
+    padding: 30px 0;
 }
 
 .wrapper:focus {
@@ -259,7 +276,8 @@ body {
 
 .clash-card {
     background: white;
-    width: 300px;
+    width: 500px;
+    height: 650px;
     display: inline-block;
     margin: auto;
     border-radius: 19px;
@@ -272,71 +290,42 @@ body {
 .clash-card__image {
     position: relative;
     height: 230px;
-    margin-bottom: 35px;
+    margin-bottom: 38px;
     border-top-left-radius: 14px;
     border-top-right-radius: 14px;
 }
 
 .clash-card__image--barbarian {
     background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/barbarian-bg.jpg");
+    background-size: cover;
 }
 
 .clash-card__image--barbarian img {
     width: 400px;
     position: absolute;
-    top: -65px;
-    left: -70px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .clash-card__image--archer {
     background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/archer-bg.jpg");
+    background-size: cover;
 }
 
 .clash-card__image--archer img {
     width: 400px;
     position: absolute;
-    top: -34px;
-    left: -37px;
-}
-
-.clash-card__image--giant {
-    background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/giant-bg.jpg");
-}
-
-.clash-card__image--giant img {
-    width: 340px;
-    position: absolute;
-    top: -30px;
-    left: -25px;
-}
-
-.clash-card__image--goblin {
-    background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/goblin-bg.jpg");
-}
-
-.clash-card__image--goblin img {
-    width: 370px;
-    position: absolute;
-    top: -21px;
-    left: -37px;
-}
-
-.clash-card__image--wizard {
-    background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/wizard-bg.jpg");
-}
-
-.clash-card__image--wizard img {
-    width: 345px;
-    position: absolute;
-    top: -28px;
-    left: -10px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .clash-card__level {
     text-transform: uppercase;
     font-size: 12px;
     font-weight: 700;
-    margin-bottom: 3px;
+    margin-bottom: 5px;
 }
 
 .clash-card__level--barbarian {
@@ -363,16 +352,16 @@ body {
     font-size: 26px;
     color: black;
     font-weight: 900;
-    margin-bottom: 5px;
 }
 
 .clash-card__unit-description {
-    padding: 20px;
-    margin-bottom: 10px;
+    padding: 10px 15px 15px 15px;
+    height: 220px;
 }
 
 .clash-card__unit-stats--barbarian {
     background: #EC9B3B;
+    height: 100px;
 }
 
 .clash-card__unit-stats--barbarian .one-third {
@@ -420,8 +409,29 @@ body {
 
 .clash-card__unit-stats .one-third {
     width: 33%;
+    height: 100%;
     float: left;
-    padding: 20px 15px;
+    padding: 30px 15px;
+}
+
+.one-third .button_moins, .one-third .button_plus {
+    background-color: rgba(0,0,0,0.5) !important;
+}
+
+.one-third .input-field {
+    margin: 0;
+}
+
+.one-third .input-field label {
+    left: 0 !important;
+    top: 0 !important;
+    height: 0.5rem;
+    color: rgba(0,0,0,0.5) !important;
+}
+
+.one-third .input-field .validate {
+    text-align: center;
+    border-bottom: 2px solid rgba(0,0,0,0.5) !important;
 }
 
 .clash-card__unit-stats sup {
@@ -457,12 +467,12 @@ body {
 }
 
 .slick-prev {
-    left: 100px !important;
+    left: 130px !important;
     z-index: 999;
 }
 
 .slick-next {
-    right: 100px !important;
+    right: 140px !important;
     z-index: 999;
 }
 /*END CODE MODAL CLASH OF CLAN*/
@@ -1357,3 +1367,5 @@ body {
   transform: rotate(360deg);
 }
 /*END CODE OF PROGRESS CIRCLE*/
+
+
