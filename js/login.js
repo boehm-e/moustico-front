@@ -31,7 +31,10 @@ function request_Login() {
         Materialize.toast(`Vous avez maintenant ${data.number} moustiques`, 2000)
       })
       init_map(data.user.map);
+
+      // SET MAP DISPLAY
       $('.hideInGame').css('display', 'none')
+      document.getElementsByClassName('circle-container')[0].style.display = 'block'
     }
   };
 
