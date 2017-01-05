@@ -4,7 +4,7 @@ function init_map(map) {
   function mousewheel(e) {
     if (camera.fov > 5 && e.deltaY > 0)
     camera.fov -= e.deltaY / 100;
-    if (camera.fov < 18 && e.deltaY < 0)
+    if (camera.fov < 25 && e.deltaY < 0)
     camera.fov -= e.deltaY / 100;
   }
 
