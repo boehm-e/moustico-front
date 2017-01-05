@@ -19,13 +19,13 @@ function request_Login() {
       console.log(data);
       var socket = io("http://localhost:4242", {
         extraHeaders: {
-          Authorization: data.token
+          Authorization: data.user.token
         }
       });
       socket.on('news', function(data) {
         console.log(data);
       })
-      init_map(data.map)
+      init_map(data.user.map)
     }
   };
 
@@ -86,9 +86,9 @@ function init_modal(name) {
     `)
     $(`#${id}`).append(renderer.domElement);
   scene.background = new THREE.Color( 0xfafafa );
-  light = new THREE.PointLight(0xffffff, 5, 39);
+  light = new THREE.PointLight(0xffffff, 0.1, 200);
   light.position.set(10, 20, 15);
-  scene.add(light);
+  GLOBAL.GROUND.add(light);
 
   var loader = new THREE.ObjectLoader();
   loader.load(`./assets/objects/${name}/${name}.json`,function ( obj ) {

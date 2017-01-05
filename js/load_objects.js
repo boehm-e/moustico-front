@@ -112,28 +112,6 @@ camera.position.z = 2;
 
 
 
-;(function(){
-  var object3d	= new THREE.AmbientLight(0x101010)
-  object3d.name	= 'Ambient light'
-  scene.add(object3d)
-  var object3d	= new THREE.DirectionalLight('white', 1)
-  object3d.position.set(-3,1,-3).setLength(10)
-  object3d.name	= 'Back light'
-  scene.add(object3d)
-  //
-  var object3d	= new THREE.DirectionalLight('white', 1)
-  object3d.position.set(-3, 3, 3).setLength(4)
-  object3d.name 	= 'Key light'
-  scene.add(object3d)
-  //
-  var object3d	= new THREE.DirectionalLight('white', 1)
-  object3d.position.set(3, 1, 3)
-  object3d.name	= 'Fill light'
-  scene.add(object3d)
-})()
-
-
-
 var mesh = new THREE.AxisHelper
 scene.add( mesh );
 
