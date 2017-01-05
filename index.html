@@ -1,184 +1,169 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8">
-  <title>isometric view</title>
-  <link rel="stylesheet" href="./css/index.css">
-  <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.slick/1.6.0/slick-theme.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script>
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r82/three.min.js"></script>
-  <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/stats.js/r11/Stats.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
-  <script type="text/javascript" src="./js/fbxLoader.js"></script>
-  <script type="text/javascript" src="./js/load_objects.js"></script>
-  <script src="http://localhost:4242/socket.io/socket.io.js"></script>
-  <script type="text/javascript" src="./js/fill_map.js"></script>
-  <script type="text/javascript" src="./js/init_map.js"></script>
-  <script type="text/javascript" src="./js/move.js"></script>
-  <script type="text/javascript" src="./js/handleModal.js"></script>
+    <meta charset="utf-8">
+    <title>isometric view</title>
+    <link rel="stylesheet" href="./css/index.css">
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.slick/1.6.0/slick-theme.css">
+    <link rel="stylesheet" href="./fonts/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
+    <script src="http://localhost:4242/socket.io/socket.io.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r82/three.min.js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/stats.js/r11/Stats.js"></script>
+    <script type="text/javascript" src="./js/fbxLoader.js"></script>
+    <script type="text/javascript" src="./js/load_objects.js"></script>
+    <script type="text/javascript" src="./js/fill_map.js"></script>
+    <script type="text/javascript" src="./js/init_map.js"></script>
+    <script type="text/javascript" src="./js/move.js"></script>
 </head>
 
 <body>
+<!--CIRCLE PROGRESS-->
+    <div class="circle-container">
+        <div class="ko-progress-lvl" data-progress="100">
+            <div class="ko-circle">
+                <div class="full ko-progress-circle__slice">
+                    <div class="ko-progress-circle__fill"></div>
+                </div>
 
-<!--START MARKDOWN CIRCLE PROGRESS-->
-  <div class="circle-container">
-    <div class="ko-progress-lvl" data-progress="100">
-      <div class="ko-circle">
-        <div class="full ko-progress-circle__slice">
-          <div class="ko-progress-circle__fill"></div>
-        </div>
-        <div class="ko-progress-circle__slice">
-          <div class="ko-progress-circle__fill"></div>
-          <div class="ko-progress-circle__fill ko-progress-circle__bar"></div>
-        </div>
-      </div>
-      <div class="ko-progress-circle__overlay"><span>1</span></div>
-    </div>
-
-    <div class="ko-progress-circle" data-progress="40">
-      <div class="ko-circle">
-        <div class="full ko-progress-circle__slice">
-          <div class="ko-progress-circle__fill"></div>
-        </div>
-        <div class="ko-progress-circle__slice">
-          <div class="ko-progress-circle__fill"></div>
-          <div class="ko-progress-circle__fill ko-progress-circle__bar"></div>
-        </div>
-      </div>
-      <div class="ko-progress-circle__overlay"><span>O</span></div>
-    </div>
-
-    <div class="ko-progress-circle" data-progress="30">
-      <div class="ko-circle">
-        <div class="full ko-progress-circle__slice">
-          <div class="ko-progress-circle__fill"></div>
-        </div>
-        <div class="ko-progress-circle__slice">
-          <div class="ko-progress-circle__fill"></div>
-          <div class="ko-progress-circle__fill ko-progress-circle__bar"></div>
-        </div>
-      </div>
-      <div class="ko-progress-circle__overlay"><span>AB</span></div>
-    </div>
-
-    <div class="ko-progress-circle" data-progress="20">
-      <div class="ko-circle">
-        <div class="full ko-progress-circle__slice">
-          <div class="ko-progress-circle__fill"></div>
-        </div>
-        <div class="ko-progress-circle__slice">
-          <div class="ko-progress-circle__fill"></div>
-          <div class="ko-progress-circle__fill ko-progress-circle__bar"></div>
-        </div>
-      </div>
-      <div class="ko-progress-circle__overlay"><span>B</span></div>
-    </div>
-
-    <div class="ko-progress-circle" data-progress="10">
-      <div class="ko-circle">
-        <div class="full ko-progress-circle__slice">
-          <div class="ko-progress-circle__fill"></div>
-        </div>
-        <div class="ko-progress-circle__slice">
-          <div class="ko-progress-circle__fill"></div>
-          <div class="ko-progress-circle__fill ko-progress-circle__bar"></div>
-        </div>
-      </div>
-      <div class="ko-progress-circle__overlay"><span>A</span></div>
-    </div>
-  </div>
-    <!--END MARKDOWN CIRCLE PROGRESS-->
-
-
-    <div class="fixed-action-btn horizontal click-to-toggle">
-    <a class="btn-floating btn-large green" href="#modal1">
-      <i class="material-icons">add</i>
-    </a>
-  </div>
-  <div id="modal1" class="modal bottom-sheet">
-    <div class="modal-content">
-      <div class="model3D">
-      </div>
-    </div>
-    <div class="modal-footer">
-    </div>
-  </div>
-
-  <div id="modal_caserne" class="modal modal_caserne">
-    <div class="modal-content">
-      <h4>Caserne niveau 2</h4>
-      <div>
-        <div class="row">
-          <div class="col s6"></div>
-          <div class="row">
-            <a class="waves-effect waves-light btn col s3 button_moins">-</a>
-            <div class="input-field col s6">
-              <input id="last_name" type="text" class="validate nbr_moustique">
-              <label for="last_name">Nombre de moustique</label>
+                <div class="ko-progress-circle__slice">
+                    <div class="ko-progress-circle__fill"></div>
+                    <div class="ko-progress-circle__fill ko-progress-circle__bar"></div>
+                </div>
             </div>
-            <a class="waves-effect waves-light btn col s3 button_plus">+</a>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="modal-footer">
-      <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">FERMER</a>
-    </div>
-  </div>
 
-  <!--START MODAL CLASH OF CLAN-->
-    <div class="slide-container">
+             <div class="ko-progress-circle__overlay"><span>1</span></div>
+        </div>
+
+        <div class="ko-progress-circle" data-progress="40">
+            <div class="ko-circle">
+                <div class="full ko-progress-circle__slice">
+                    <div class="ko-progress-circle__fill"></div>
+                </div>
+
+                <div class="ko-progress-circle__slice">
+                    <div class="ko-progress-circle__fill"></div>
+                    <div class="ko-progress-circle__fill ko-progress-circle__bar"></div>
+                </div>
+            </div>
+
+            <div class="ko-progress-circle__overlay"><span>O</span></div>
+        </div>
+
+        <div class="ko-progress-circle" data-progress="30">
+            <div class="ko-circle">
+                <div class="full ko-progress-circle__slice">
+                    <div class="ko-progress-circle__fill"></div>
+                </div>
+
+                <div class="ko-progress-circle__slice">
+                    <div class="ko-progress-circle__fill"></div>
+                    <div class="ko-progress-circle__fill ko-progress-circle__bar"></div>
+                </div>
+            </div>
+
+            <div class="ko-progress-circle__overlay"><span>AB</span></div>
+        </div>
+
+        <div class="ko-progress-circle" data-progress="20">
+            <div class="ko-circle">
+                <div class="full ko-progress-circle__slice">
+                    <div class="ko-progress-circle__fill"></div>
+                </div>
+
+                <div class="ko-progress-circle__slice">
+                    <div class="ko-progress-circle__fill"></div>
+                    <div class="ko-progress-circle__fill ko-progress-circle__bar"></div>
+                </div>
+            </div>
+
+            <div class="ko-progress-circle__overlay"><span>B</span></div>
+        </div>
+
+        <div class="ko-progress-circle" data-progress="10">
+            <div class="ko-circle">
+                <div class="full ko-progress-circle__slice">
+                    <div class="ko-progress-circle__fill"></div>
+                </div>
+
+                <div class="ko-progress-circle__slice">
+                    <div class="ko-progress-circle__fill"></div>
+                    <div class="ko-progress-circle__fill ko-progress-circle__bar"></div>
+                </div>
+            </div>
+
+            <div class="ko-progress-circle__overlay"><span>A</span></div>
+        </div>
+    </div>
+
+    <!--MODAL CLASH OF CLAN-->
+    <div id="modal_caserne" class="modal slide-container modal_caserne">
         <div class="wrapper">
             <div class="clash-card barbarian">
                 <div class="clash-card__image clash-card__image--barbarian">
                     <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/barbarian.png" alt="barbarian" />
+                    <div class="modal-footer">
+                        <a href="#!" class=" modal-action modal-close waves-effect waves-transparent btn-flat"><i class="fa fa-times" aria-hidden="true"></i></a>
+                    </div>
                 </div>
+
                 <div class="clash-card__level clash-card__level--barbarian">Level 4</div>
-                <div class="clash-card__unit-name">The Barbarian</div>
+                <div class="clash-card__unit-name">Caserne 1</div>
+
                 <div class="clash-card__unit-description">
-                    The Barbarian is a kilt-clad Scottish warrior with an angry, battle-ready expression, hungry for destruction. He has Killer yellow horseshoe mustache.
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque aut beatae dicta eos et laboriosam nobis quibusdam recusandae sequi! Accusantium cumque incidunt labore nesciunt nulla optio perferendis sint ullam ut!
                 </div>
 
                 <div class="clash-card__unit-stats clash-card__unit-stats--barbarian clearfix">
                     <div class="one-third">
-                        <div class="stat">20<sup>S</sup></div>
-                        <div class="stat-value">Training</div>
+                        <!--<div class="stat">20</div>-->
+                        <!--<div class="stat-value">Training</div>-->
+                        <div class="input-field col">
+                            <input id="last_name" type="text" class="validate nbr_moustique">
+                            <label for="last_name">Nombre de moustique</label>
+                        </div>
                     </div>
 
                     <div class="one-third">
-                        <div class="stat">16</div>
-                        <div class="stat-value">Speed</div>
+                        <!--<div class="stat">16</div>-->
+                        <!--<div class="stat-value">Speed</div>-->
+                        <a class="waves-effect waves-light btn col button_moins">-</a>
                     </div>
 
                     <div class="one-third no-border">
-                        <div class="stat">150</div>
-                        <div class="stat-value">Cost</div>
+                        <!--<div class="stat">150</div>-->
+                        <!--<div class="stat-value">Cost</div>-->
+                        <a class="waves-effect waves-light btn col button_plus">+</a>
                     </div>
-
                 </div>
-
-            </div> <!-- end clash-card barbarian-->
-        </div> <!-- end wrapper -->
+            </div>
+        </div>
 
         <div class="wrapper">
             <div class="clash-card archer">
                 <div class="clash-card__image clash-card__image--archer">
                     <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/archer.png" alt="archer" />
+                    <div class="modal-footer">
+                        <a href="#!" class=" modal-action modal-close waves-effect waves-transparent btn-flat"><i class="fa fa-times" aria-hidden="true"></i></a>
+                    </div>
                 </div>
+
                 <div class="clash-card__level clash-card__level--archer">Level 5</div>
-                <div class="clash-card__unit-name">The Archer</div>
+                <div class="clash-card__unit-name">Caserne 2</div>
+
                 <div class="clash-card__unit-description">
-                    The Archer is a female warrior with sharp eyes. She wears a short, light green dress, a hooded cape, a leather belt and an attached small pouch.
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam asperiores aut autem beatae debitis, ea facilis harum id illum, laudantium minus necessitatibus nihil, odio officiis porro quibusdam tempora.
                 </div>
 
                 <div class="clash-card__unit-stats clash-card__unit-stats--archer clearfix">
                     <div class="one-third">
-                        <div class="stat">25<sup>S</sup></div>
+                        <div class="stat">25</div>
                         <div class="stat-value">Training</div>
                     </div>
 
@@ -191,126 +176,75 @@
                         <div class="stat">300</div>
                         <div class="stat-value">Cost</div>
                     </div>
-
                 </div>
 
-            </div> <!-- end clash-card archer-->
-        </div> <!-- end wrapper -->
-
-        <div class="wrapper">
-            <div class="clash-card giant">
-                <div class="clash-card__image clash-card__image--giant">
-                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/giant.png" alt="giant" />
-                </div>
-                <div class="clash-card__level clash-card__level--giant">Level 5</div>
-                <div class="clash-card__unit-name">The Giant</div>
-                <div class="clash-card__unit-description">
-                    Slow, steady and powerful, Giants are massive warriors that soak up huge amounts of damage. Show them a turret or cannon and you'll see their fury unleashed!
-                </div>
-
-                <div class="clash-card__unit-stats clash-card__unit-stats--giant clearfix">
-                    <div class="one-third">
-                        <div class="stat">2<sup>M</sup></div>
-                        <div class="stat-value">Training</div>
-                    </div>
-
-                    <div class="one-third">
-                        <div class="stat">12</div>
-                        <div class="stat-value">Speed</div>
-                    </div>
-
-                    <div class="one-third no-border">
-                        <div class="stat">2250</div>
-                        <div class="stat-value">Cost</div>
-                    </div>
-
-                </div>
-
-            </div> <!-- end clash-card giant-->
-        </div> <!-- end wrapper -->
-
-        <div class="wrapper">
-            <div class="clash-card goblin">
-                <div class="clash-card__image clash-card__image--goblin">
-                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/goblin.png" alt="goblin" />
-                </div>
-                <div class="clash-card__level clash-card__level--goblin">Level 5</div>
-                <div class="clash-card__unit-name">The Goblin</div>
-                <div class="clash-card__unit-description">
-                    These pesky little creatures only have eyes for one thing: LOOT! They are faster than a Spring Trap, and their hunger for resources is limitless.
-                </div>
-
-                <div class="clash-card__unit-stats clash-card__unit-stats--goblin clearfix">
-                    <div class="one-third">
-                        <div class="stat">30<sup>S</sup></div>
-                        <div class="stat-value">Training</div>
-                    </div>
-
-                    <div class="one-third">
-                        <div class="stat">32</div>
-                        <div class="stat-value">Speed</div>
-                    </div>
-
-                    <div class="one-third no-border">
-                        <div class="stat">100</div>
-                        <div class="stat-value">Cost</div>
-                    </div>
-
-                </div>
-
-            </div> <!-- end clash-card goblin-->
-        </div> <!-- end wrapper -->
-
-        <div class="wrapper">
-            <div class="clash-card wizard">
-                <div class="clash-card__image clash-card__image--wizard">
-                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/wizard.png" alt="wizard" />
-                </div>
-                <div class="clash-card__level clash-card__level--wizard">Level 6</div>
-                <div class="clash-card__unit-name">The Wizard</div>
-                <div class="clash-card__unit-description">
-                    The Wizard is a terrifying presence on the battlefield. Pair him up with some of his fellows and cast concentrated blasts of destruction on anything, land or sky!
-                </div>
-
-                <div class="clash-card__unit-stats clash-card__unit-stats--wizard clearfix">
-                    <div class="one-third">
-                        <div class="stat">5<sup>M</sup></div>
-                        <div class="stat-value">Training</div>
-
-                      </div>
-                    <div class="one-third">
-                        <div class="stat">16</div>
-                        <div class="stat-value">Speed</div>
-                    </div>
-
-                    <div class="one-third no-border">
-                        <div class="stat">4000</div>
-                        <div class="stat-value">Cost</div>
-                    </div>
-                </div>
-            </div> <!-- end clash-card wizard-->
-        </div> <!-- end wrapper -->
-    </div> <!-- end container -->
-  <!--END MODAL CLASH OF CLAN-->
-
-  <div class="form">
-    <div class="thumbnail"><img src="./assets/images/MosquitoGames.png"/></div>
-    <div class="register-form">
-      <input type="text" placeholder="Email address" id="email_create"/>
-      <input type="text" placeholder="First name" id="firstname_create"/>
-      <input type="text" placeholder="Last name" id="lastname_create"/>
-      <input type="password" placeholder="Password" id="password_create"/>
-      <button id="button_create">CREATE</button>
-      <p class="message">Already registered? <a id="login" href="#">Sign In</a></p>
+            </div>
+        </div>
     </div>
-    <div class="login-form">
-      <input type="text" placeholder="Username" id="email"/>
-      <input type="password" placeholder="Password" id="password"/>
-      <button id="button_login">LOGIN</button>
-      <p class="message">Not registered? <a id="create_account" href="#">Create an account</a></p>
+
+    <!--MODAL BATSU MATERIALIZE-->
+    <!--<div id="modal_caserne" class="modal modal_caserne">-->
+        <!--<div class="modal-content">-->
+            <!--<div>-->
+                <!--<div class="row">-->
+                    <!--<div class="col s6"></div>-->
+                    <!--<div class="row">-->
+                        <!--<div class="input-field col">-->
+                            <!--<input id="last_name" type="text" class="validate nbr_moustique">-->
+                            <!--<label for="last_name">Nombre de moustique</label>-->
+                        <!--</div>-->
+
+                        <!--<a class="waves-effect waves-light btn col button_moins">-</a>-->
+
+                        <!--<a class="waves-effect waves-light btn col button_plus">+</a>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
+
+    <!--LOGIN-->
+    <div class="form">
+        <div class="thumbnail">
+            <img src="./assets/images/MosquitoGames.png"/>
+        </div>
+
+        <div class="register-form">
+            <input type="text" placeholder="Email address" id="email_create"/>
+            <input type="text" placeholder="First name" id="firstname_create"/>
+            <input type="text" placeholder="Last name" id="lastname_create"/>
+            <input type="password" placeholder="Password" id="password_create"/>
+            <button id="button_create">CREATE</button>
+            <p class="message">Already registered? <a id="login" href="#">Sign In</a></p>
+        </div>
+
+        <div class="login-form">
+            <input type="text" placeholder="Username" id="email"/>
+            <input type="password" placeholder="Password" id="password"/>
+            <button id="button_login">LOGIN</button>
+            <p class="message">Not registered? <a id="create_account" href="#">Create an account</a></p>
+        </div>
     </div>
-  </div>
-  <script type="text/javascript" src="./js/modal.js"></script>
-  <script type="text/javascript" src="./js/login.js"></script>
+
+    <!--FLOATING ACTION BUTTON-->
+    <div class="fixed-action-btn horizontal click-to-toggle">
+        <a class="btn-floating btn-large green" href="#modal1">
+            <i class="material-icons">add</i>
+        </a>
+    </div>
+
+    <!--MODAL WITH FLOATING ACTION BUTTON-->
+    <div id="modal1" class="modal bottom-sheet">
+        <div class="modal-content">
+            <div class="model3D">
+            </div>
+        </div>
+        <div class="modal-footer">
+        </div>
+    </div>
+
+    <script type="text/javascript" src="./js/login.js"></script>
+    <script type="text/javascript" src="./js/handleModal.js"></script>
+
 </body>
 </html>
