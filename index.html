@@ -21,13 +21,14 @@
   <script type="text/javascript" src="./js/init_map.js"></script>
   <script type="text/javascript" src="./js/move.js"></script>
   <script type="text/javascript" src="./js/handleModal.js"></script>
+  <script type="text/javascript" src="./js/infos.js"></script>
 </head>
 
 <body>
 
 <!--START MARKDOWN CIRCLE PROGRESS-->
   <div class="circle-container">
-    <div class="ko-progress-lvl" data-progress="100">
+    <div class="ko-progress-lvl" id="level" data-progress="100">
       <div class="ko-circle">
         <div class="full ko-progress-circle__slice">
           <div class="ko-progress-circle__fill"></div>
@@ -40,7 +41,7 @@
       <div class="ko-progress-circle__overlay"><span>1</span></div>
     </div>
 
-    <div class="ko-progress-circle" data-progress="40">
+    <div class="ko-progress-circle"  id="blood_O" data-progress="0">
       <div class="ko-circle">
         <div class="full ko-progress-circle__slice">
           <div class="ko-progress-circle__fill"></div>
@@ -53,7 +54,7 @@
       <div class="ko-progress-circle__overlay"><span>O</span></div>
     </div>
 
-    <div class="ko-progress-circle" data-progress="30">
+    <div class="ko-progress-circle" id="blood_AB" data-progress="0">
       <div class="ko-circle">
         <div class="full ko-progress-circle__slice">
           <div class="ko-progress-circle__fill"></div>
@@ -66,7 +67,7 @@
       <div class="ko-progress-circle__overlay"><span>AB</span></div>
     </div>
 
-    <div class="ko-progress-circle" data-progress="20">
+    <div class="ko-progress-circle" id="blood_B" data-progress="0">
       <div class="ko-circle">
         <div class="full ko-progress-circle__slice">
           <div class="ko-progress-circle__fill"></div>
@@ -79,7 +80,7 @@
       <div class="ko-progress-circle__overlay"><span>B</span></div>
     </div>
 
-    <div class="ko-progress-circle" data-progress="10">
+    <div class="ko-progress-circle" id="blood_A" data-progress="0">
       <div class="ko-circle">
         <div class="full ko-progress-circle__slice">
           <div class="ko-progress-circle__fill"></div>

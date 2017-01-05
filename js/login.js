@@ -18,12 +18,17 @@ function request_Login() {
       /******************************/
       var data = JSON.parse(this.response).data;
       GLOBAL.data = data;
+      setStats(GLOBAL.data.factory);
       socket = io("http://localhost:4242", { query: "token="+data.token });
       socket.on('blood', function(data) {
         console.log("blood : ", data);
+        setStats(data);
       })
       socket.on('mapUpdate', function() {
         Materialize.toast('Map mise a jour :)', 2000)
+      })
+      socket.on('enroleUpdate', function(data) {
+        Materialize.toast(`Vous avez maintenant ${data.number} moustiques`, 2000)
       })
       init_map(data.user.map);
     }
@@ -61,6 +66,22 @@ function request_Register() {
   };
 
   request.send(JSON.stringify(body));
+}
+
+function setStats(factory) {
+  const lvl = GLOBAL.data.factory.level;
+  const percentA = factory.blood_A / (lvl * 10);
+  const percentB = factory.blood_B / (lvl * 10);
+  const percentAB = factory.blood_AB / (lvl * 10);
+  const percentO = factory.blood_O / (lvl * 10);
+  console.log("PERCENT A : ", percentA);
+  console.log("PERCENT B : ", percentB);
+  console.log("PERCENT AB : ", percentAB);
+  console.log("PERCENT O : ", percentO);
+  setBloodA(percentA);
+  setBloodB(percentB);
+  setBloodAB(percentAB);
+  setBloodO(percentO);
 }
 
 function init_modal(name) {
