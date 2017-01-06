@@ -30,7 +30,7 @@ function handleModal(name) {
     case "caserne":
     $('#modal_caserne').modal('open');
     break;
-    case "caserne":
+    case "bloodhouse":
     $('#modal_bloodhouse').modal('open');
     break;
   }
