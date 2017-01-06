@@ -29,6 +29,7 @@
   <script type="text/javascript" src="./js/infos.js"></script>
   <script type="text/javascript" src="./js/intro.js"></script>
   <script type="text/javascript" src="./js/tuto.js"></script>
+  <script type="text/javascript" src="./js/gauge.js"></script>
 </head>
 
 <body>
@@ -154,7 +155,7 @@
                     <div class="one-third one-four">
                         <a class="waves-effect waves-light btn col plus">+</a>
                     </div>
-                    <div class="one-third one-four submit">
+                    <div class="one-third one-four submit no-border">
                         <a class="waves-effect waves-light btn col plus">V</a>
                     </div>
                 </div>
@@ -162,7 +163,7 @@
         </div>
 
         <div class="wrapper">
-            <div class="clash-card archer">
+            <div class="clash-card archer" id="modal_bloodhouse">
                 <div class="clash-card__image clash-card__image--archer">
                     <img src="./assets/images/bloodhouse.png" alt="archer" />
                     <div class="modal-footer">
@@ -178,19 +179,68 @@
                 </div>
 
                 <div class="clash-card__unit-stats clash-card__unit-stats--archer clearfix">
-                    <div class="one-third">
-                        <div class="stat">25</div>
-                        <div class="stat-value">Training</div>
+                    <div class="one-four">
+                        <!--<div class="stat">25</div>-->
+                        <!--<div class="stat-value">Training</div>-->
+                        <div class="wrapper">
+                            <div class="green">
+                                <div class="progress">
+                                    <div class="inner">
+                                        <div class="percent"><span>A</span></div>
+                                        <div class="water"></div>
+                                        <div class="glare"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="one-third">
-                        <div class="stat">24</div>
-                        <div class="stat-value">Speed</div>
+                    <div class="one-four">
+                        <!--<div class="stat">24</div>-->
+                        <!--<div class="stat-value">Speed</div>-->
+                        <div class="wrapper">
+                            <div class="green">
+                                <div class="progress">
+                                    <div class="inner">
+                                        <div class="percent"><span>B</span></div>
+                                        <div class="water"></div>
+                                        <div class="glare"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="one-third no-border">
-                        <div class="stat">300</div>
-                        <div class="stat-value">Cost</div>
+                    <div class="one-four">
+                        <!--<div class="stat">24</div>-->
+                        <!--<div class="stat-value">Speed</div>-->
+                        <div class="wrapper">
+                            <div class="green">
+                                <div class="progress">
+                                    <div class="inner">
+                                        <div class="percent"><span>AB</span></div>
+                                        <div class="water"></div>
+                                        <div class="glare"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="one-four no-border">
+                        <!--<div class="stat">300</div>-->
+                        <!--<div class="stat-value">Cost</div>-->
+                        <div class="wrapper">
+                            <div class="green">
+                                <div class="progress">
+                                    <div class="inner">
+                                        <div class="percent"><span>O</span></div>
+                                        <div class="water"></div>
+                                        <div class="glare"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
