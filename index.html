@@ -2,18 +2,22 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>isometric view</title>
+  <title>Isometric view</title>
+
   <link rel="stylesheet" href="./css/index.css">
   <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.slick/1.6.0/slick-theme.css">
+  <link rel="stylesheet" href="css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/introjs.css" type="text/css" media="screen">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
   <script src="https://cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r82/three.min.js"></script>
   <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/stats.js/r11/Stats.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
+  <script type="text/javascript" src="./js/backbone-1.0.0.js"></script>
   <script type="text/javascript" src="./js/fbxLoader.js"></script>
   <script type="text/javascript" src="./js/typeWrite.js"></script>
   <script type="text/javascript" src="./js/load_objects.js"></script>
@@ -23,10 +27,12 @@
   <script type="text/javascript" src="./js/move.js"></script>
   <script type="text/javascript" src="./js/handleModal.js"></script>
   <script type="text/javascript" src="./js/infos.js"></script>
+  <script type="text/javascript" src="./js/intro.js"></script>
+  <script type="text/javascript" src="./js/tuto.js"></script>
 </head>
 
 <body>
-	<h1 style="font-family: 'GROBOLD'; color:#EEEEEE; text-align: center" class="hideInGame">Mostico Game's</h1>
+	<h1 style="font-family: 'GROBOLD'; color:#EEEEEE; text-align: center" class="hideInGame display-title">Mostico Game's</h1>
 	<div class="paragraph">
 		<div class="row" style="">
 			<img class="img_moustique" src="assets/images/moustique1.png">
@@ -39,10 +45,9 @@
 				</div>
 			</div>
 		</div>
-
 	</div>
 <!--START MARKDOWN CIRCLE PROGRESS-->
-  <div class="circle-container" style="display: none">
+  <div data-step="3" data-intro='voici vos stocks de sangs' class="circle-container" style="display: none">
     <div class="ko-progress-lvl" data-progress="100">
       <div class="ko-circle">
         <div class="full ko-progress-circle__slice">
@@ -56,7 +61,7 @@
       <div class="ko-progress-circle__overlay"><span>1</span></div>
     </div>
 
-    <div  id="blood_O" class="ko-progress-circle" data-progress="40">
+    <div id="blood_O" class="ko-progress-circle" data-progress="40">
         <div class="ko-circle">
             <div class="full ko-progress-circle__slice">
                 <div class="ko-progress-circle__fill"></div>
@@ -247,7 +252,7 @@
     <!--MODAL WITH FLOATING ACTION BUTTON-->
     <div id="modal1" class="modal bottom-sheet">
         <div class="modal-content">
-            <div class="model3D">
+            <div data-step="2" data-intro='Choisir un item'  class="model3D">
             </div>
         </div>
         <div class="modal-footer">

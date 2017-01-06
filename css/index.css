@@ -3,6 +3,10 @@
     src: url('../assets/fonts/GROBOLD.ttf');
 }
 
+.display-title {
+    margin: 4rem !important;
+}
+
 .hideInGame {
   display: block;
 }
