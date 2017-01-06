@@ -119,9 +119,9 @@
 
     <div class="all_body">
     <!--MODAL CLASH OF CLAN-->
-    <div id="modal_caserne" style="opacity: 0; z-index:-1"  class="modal slide-container modal_caserne close">
+    <div style="opacity: 0; z-index:-1"  class="modal slide-container modal_caserne close">
         <div class="wrapper">
-            <div class="clash-card barbarian">
+            <div class="clash-card" id="modal_caserne">
                 <div class="clash-card__image clash-card__image--barbarian">
                     <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/barbarian.png" alt="barbarian" />
                     <div class="modal-footer">
@@ -138,8 +138,6 @@
 
                 <div class="clash-card__unit-stats clash-card__unit-stats--barbarian clearfix">
                     <div class="one-third">
-                        <!--<div class="stat">20</div>-->
-                        <!--<div class="stat-value">Training</div>-->
                         <div class="input-field col">
                             <input id="last_name" type="text" class="validate nbr_moustique">
                             <label for="last_name">Nombre de moustique</label>
@@ -147,15 +145,11 @@
                     </div>
 
                     <div class="one-third">
-                        <!--<div class="stat">16</div>-->
-                        <!--<div class="stat-value">Speed</div>-->
-                        <a class="waves-effect waves-light btn col button_moins">-</a>
+                        <a class="waves-effect waves-light btn col moins">-</a>
                     </div>
 
                     <div class="one-third no-border">
-                        <!--<div class="stat">150</div>-->
-                        <!--<div class="stat-value">Cost</div>-->
-                        <a class="waves-effect waves-light btn col button_plus">+</a>
+                        <a class="waves-effect waves-light btn col plus">+</a>
                     </div>
                 </div>
             </div>

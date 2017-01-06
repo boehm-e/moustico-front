@@ -231,9 +231,6 @@ body {
   color: black !important;
 }
 
-.button_plus, .button_moins {
-}
-
 /*START CODE MODAL CLASH OF CLAN*/
 .modal-content {
     padding: 20px;
@@ -421,7 +418,7 @@ body {
     padding: 30px 15px;
 }
 
-.one-third .button_moins, .one-third .button_plus {
+.one-third .moins, .one-third .plus {
     background-color: rgba(0,0,0,0.5) !important;
 }
 
