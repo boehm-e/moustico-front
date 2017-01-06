@@ -1392,11 +1392,7 @@ body {
 }
 
 .green .progress {
-    border: 5px solid #EF3B3A;
-}
-
-.green .progress {
-    box-shadow: 0 0 10px #ef3b3a;
+    border: 5px solid #fff;
 }
 
 .green .progress,
@@ -1419,12 +1415,6 @@ body {
 .orange .progress .inner {
     width: 70px;
     height: 70px;
-}
-
-.green .progress .inner,
-.red .progress .inner,
-.orange .progress .inner {
-    border: 5px solid #1a1a1a;
 }
 
 .green .progress .inner,
@@ -1468,7 +1458,6 @@ body {
 }
 
 .green .progress .inner .water {
-    box-shadow: 0 0 10px #ef3b3a;
     z-index: -1;
 }
 
