@@ -3,6 +3,10 @@
     src: url('../assets/fonts/GROBOLD.ttf');
 }
 
+.display-title {
+    margin: 4rem !important;
+}
+
 .hideInGame {
   display: block;
 }
@@ -417,6 +421,14 @@ body {
     float: left;
     padding: 30px 15px;
 }
+
+.clash-card__unit-stats .one-four {
+    width: 25%;
+    height: 100%;
+    float: left;
+    padding: 30px 15px;
+}
+
 
 .one-third .moins, .one-third .plus {
     background-color: rgba(0,0,0,0.5) !important;

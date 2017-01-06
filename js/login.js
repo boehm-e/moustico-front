@@ -30,6 +30,9 @@ function request_Login() {
       socket.on('enroleUpdate', function(data) {
         Materialize.toast(`Vous avez maintenant ${data.number} moustiques`, 2000)
       })
+      socket.on('enroleFail', function(data) {
+        Materialize.toast(`Vous n'avez pas assez de sang`, 2000)
+      })
       init_map(data.user.map);
 
       // SET MAP DISPLAY
