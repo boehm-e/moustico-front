@@ -35,6 +35,9 @@ function handleModal(name) {
     $('#modal_bloodhouse').modal('open');
     slideContainer.slick('slickGoTo', 1)
     break;
+    case "canon":
+    $('#modal_canon').modal('open');
+    break;
   }
 }
 var slideContainer;
