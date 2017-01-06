@@ -33,6 +33,9 @@ function request_Login() {
       socket.on('enroleFail', function(data) {
         Materialize.toast(`Vous n'avez pas assez de sang`, 2000)
       })
+      socket.on('attackReturn', function(data) {
+        Materialize.toast(`Vous gagnez XXX SANG, mais malheureusement XXX moustiques sont morts`, 4000);
+      })
       init_map(data.user.map);
 
       // SET MAP DISPLAY

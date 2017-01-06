@@ -1,5 +1,7 @@
 
 (function() {
+
+  // CASERNE
   $('#modal_caserne .moins').click(function(){
     var nbr = parseInt($('#modal_caserne .nbr_moustique').val()) || 0;
     var tmp = 0;
@@ -23,6 +25,41 @@
     });
     $('#modal_caserne .nbr_moustique').val(0);
   })
+
+
+
+
+  //
+  $('#modal_canon .moins').click(function(){
+    var nbr = parseInt($('#modal_canon .nbr_moustique').val()) || 0;
+    var tmp = 0;
+    if (nbr > 1)
+    tmp = nbr - 1;
+    $('#modal_canon .nbr_moustique').val(tmp);
+    Materialize.updateTextFields();
+  })
+
+  $('#modal_canon .plus').click(function(){
+    var nbr = parseInt($('#modal_canon .nbr_moustique').val()) || 0;
+    var tmp = nbr + 1;
+    $('#modal_canon .nbr_moustique').val(tmp);
+    Materialize.updateTextFields();
+  })
+
+  $('#modal_canon .submit').click(function(){
+    socket.emit('attack', {
+      number: parseInt($('#modal_canon .nbr_moustique').val()) || 0,
+      level: GLOBAL.data.factory.level
+    });
+    $('#modal_canon .nbr_moustique').val(0);
+  })
+
+
+
+
+
+
+
 })();
 
 function handleModal(name) {
@@ -37,6 +74,7 @@ function handleModal(name) {
     break;
     case "canon":
     $('#modal_canon').modal('open');
+    slideContainer.slick('slickGoTo', 2)
     break;
   }
 }

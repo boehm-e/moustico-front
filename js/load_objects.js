@@ -34,7 +34,7 @@ var JSON_house = new Promise((resolve, reject) => {
 var loader = new THREE.ObjectLoader();
 var JSON_caserne = new Promise((resolve, reject) => {
   loader.load('./assets/objects/caserne/caserne.json',function ( obj ) {
-    // obj.scale.set(0.5,0.5,0.5)
+    obj.rotation.y = Math.PI
     return resolve(obj);
   });
 });
@@ -58,7 +58,6 @@ var JSON_redbull = new Promise((resolve, reject) => {
 var loader = new THREE.ObjectLoader();
 var JSON_tower = new Promise((resolve, reject) => {
   loader.load('./assets/objects/tower/tower.json',function ( obj ) {
-    // obj.scale.set(0.3,0.3,0.3)
     return resolve(obj);
   });
 });
@@ -66,6 +65,7 @@ var JSON_tower = new Promise((resolve, reject) => {
 var loader = new THREE.ObjectLoader();
 var JSON_canon = new Promise((resolve, reject) => {
   loader.load('./assets/objects/canon/canon.json',function ( obj ) {
+    obj.rotation.y = Math.PI
     return resolve(obj);
   });
 });
