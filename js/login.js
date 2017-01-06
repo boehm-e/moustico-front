@@ -34,7 +34,7 @@ function request_Login() {
         Materialize.toast(`Vous n'avez pas assez de sang`, 2000)
       })
       socket.on('attackReturn', function(data) {
-        Materialize.toast(`Vous gagnez XXX SANG, mais malheureusement XXX moustiques sont morts`, 4000);
+        Materialize.toast(`Vous avez vole ${data.gain / 1000} L de sang a ${data.ennemy} , mais malheureusement ${data.dead}  moustiques sont morts`, 4000);
       })
       init_map(data.user.map);
 
