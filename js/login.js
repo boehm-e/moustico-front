@@ -106,10 +106,10 @@ function init_modal(name) {
     <div class="row">
     <div class="col s12">
     <div class="card">
-    <div class="card-image" id="${id}">
+    <div class="card-image" id="${id}" data-type="${name}">
     <span class="card-title">${name}</span>
     </div>
-    <div class="card-action">
+    <div class="card-action" id="${name}">
     <a href="#" onclick="ADD_OBJECT='${name}';$('#modal1').modal('close');">Choose</a>
     </div>
     </div>
