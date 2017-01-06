@@ -4,7 +4,7 @@
     var nbr = parseInt($('#modal_caserne .nbr_moustique').val()) || 0;
     var tmp = 0;
     if (nbr > 1)
-      tmp = nbr - 1;
+    tmp = nbr - 1;
     $('#modal_caserne .nbr_moustique').val(tmp);
     Materialize.updateTextFields();
   })
@@ -14,6 +14,14 @@
     var tmp = nbr + 1;
     $('#modal_caserne .nbr_moustique').val(tmp);
     Materialize.updateTextFields();
+  })
+
+  $('#modal_caserne .submit').click(function(){
+    socket.emit('enrole', {
+      number: parseInt($('#modal_caserne .nbr_moustique').val()) || 0,
+      level: GLOBAL.data.factory.level
+    });
+    $('#modal_caserne .nbr_moustique').val(0);
   })
 })();
 
