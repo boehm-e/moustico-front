@@ -53,6 +53,16 @@ function fill_map(map) {
           cube.type = "tower"
           cube.add(GLOBAL.objects.tower.clone())
           break;
+        case 47: // banque de sang
+          cube = new THREE.Mesh(geometry, GrassMaterial);
+          cube.type = "redbull"
+          cube.add(GLOBAL.objects.redbull.clone())
+          break;
+        case 48: // banque de sang
+          cube = new THREE.Mesh(geometry, GrassMaterial);
+          cube.type = "canon"
+          cube.add(GLOBAL.objects.canon.clone())
+          break;
       }
 
       if (cube) {

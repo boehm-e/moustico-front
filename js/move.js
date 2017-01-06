@@ -1,6 +1,6 @@
 var mouse = new THREE.Vector2();
 GLOBAL.previousCoordinate = [-1,-1];
-GLOBAL.availableNames = ["bloodhouse","caserne","rose","tree"];
+GLOBAL.availableNames = ["bloodhouse","caserne","rose","tree", "redbull_house", "redbull","canon"];
 
 var ADD_OBJECT;
 
@@ -142,11 +142,13 @@ window.addEventListener('mouseup', function( event ) {
   raycaster.set( camera.position, vector.sub( camera.position ).normalize() );
   var intersects = raycaster.intersectObject( GLOBAL.GROUND, true );
   if ( intersects.length > 0 ) {
+    console.log(intersects[0]);
     fff = intersects[0]
     var tmp = fff.object;
     while (tmp) {
       tmp = tmp.parent
       if (!ADD_OBJECT && tmp && tmp.name && GLOBAL.availableNames.indexOf(tmp.name) > -1) {
+        console.log(tmp.name);
         handleModal(tmp.name)
         break;
       }
@@ -169,9 +171,17 @@ window.addEventListener('mouseup', function( event ) {
       abc = intersects[0].object.add(GLOBAL.objects.tree.clone())
       GLOBAL.map[GLOBAL.previousCoordinate[0]][GLOBAL.previousCoordinate[1]] = 45;
       break;
-      case "wall":
+      case "tower":
       abc = intersects[0].object.add(GLOBAL.objects.tower.clone())
       GLOBAL.map[GLOBAL.previousCoordinate[0]][GLOBAL.previousCoordinate[1]] = 46;
+      break;
+      case "redbull":
+      abc = intersects[0].object.add(GLOBAL.objects.redbull.clone())
+      GLOBAL.map[GLOBAL.previousCoordinate[0]][GLOBAL.previousCoordinate[1]] = 47;
+      break;
+      case "canon":
+      abc = intersects[0].object.add(GLOBAL.objects.canon.clone())
+      GLOBAL.map[GLOBAL.previousCoordinate[0]][GLOBAL.previousCoordinate[1]] = 48;
       break;
     }
     if ($('#modal1').css('display') == 'none' && ADD_OBJECT) {

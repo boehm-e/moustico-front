@@ -180,4 +180,5 @@ function init_modal(name) {
     init_modal("tree")
     init_modal("wall")
     init_modal("tower")
+    init_modal("canon")
   })();

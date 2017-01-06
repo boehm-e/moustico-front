@@ -29,9 +29,11 @@ function handleModal(name) {
   switch (name) {
     case "caserne":
     $('#modal_caserne').modal('open');
+    slideContainer.slick('slickGoTo', 0)
     break;
     case "bloodhouse":
     $('#modal_bloodhouse').modal('open');
+    slideContainer.slick('slickGoTo', 1)
     break;
   }
 }
